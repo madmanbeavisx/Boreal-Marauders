@@ -55,15 +55,12 @@ class Mod implements IPreSptLoadMod, IPostDBLoadMod, IPostSptLoadMod
         };
         
         CustomItem.createItem(WhiteDeathMaskItem); //Basically calls the function and tell the server to add our Cloned new item into the server
-
-        // TODO: Finish out adding items to traders.
-        // this.logger.log(`[${this.modName}] Adding Items to traders`, LogTextColor.GREEN)
-        // this.addItemsToTraders(container);
+        this.addItemsToTraders(container);
     }
     
     private getVersionFromJson(): any 
     {
-        const packageJsonPath = "../package.json";
+        const packageJsonPath = path.join(__dirname, "../package.json");
         
         fs.readFile(packageJsonPath, "utf-8", (err, data) => 
         {
