@@ -1,6 +1,14 @@
 {
     "manifest": [
         {
+            "key": "wintertrooperfastmt.bundle",
+            "dependencyKeys": [
+                "shaders",
+                "cubemaps",
+                "assets/commonassets/physics/physicsmaterials.bundle"
+            ]
+        },
+        {
             "key": "whitoutdeathsquadmask.bundle",
             "dependencyKeys": [
                 "shaders",

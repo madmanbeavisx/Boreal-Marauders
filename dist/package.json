@@ -1,6 +1,6 @@
 {
     "name": "winters-death-gear",
-    "version": "0.2.0",
+    "version": "0.2.5",
     "sptVersion": "~3.9",
     "loadBefore": [],
     "loadAfter": [],

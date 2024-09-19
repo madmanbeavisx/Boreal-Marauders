@@ -10,6 +10,7 @@
         "plugin:@typescript-eslint/recommended"
     ],
     "rules": {
+        "no-prototype-builtins": "off",
         "@typescript-eslint/no-explicit-any": 0,
         "@typescript-eslint/no-unused-vars": 1,
         "@typescript-eslint/no-empty-interface": 0,

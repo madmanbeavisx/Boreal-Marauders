@@ -1,4 +1,5 @@
 import { ITemplateItem, ItemType, Props } from "@spt/models/eft/common/tables/ITemplateItem";
+import { NewItemDetails, NewItemFromCloneDetails } from "@spt/models/spt/mod/NewItemDetails";
 
 const WhiteDeathProps: Props = {
     Name: "white_death_mask",
@@ -13,10 +14,6 @@ const WhiteDeathProps: Props = {
     ItemSound: "gear_generic",
     Prefab: {
         path: "whitoutdeathsquadmask.bundle",
-        rcid: ""
-    },
-    UsePrefab: {
-        path: "",
         rcid: ""
     },
     StackObjectsCount: 1,
@@ -127,4 +124,36 @@ export const WhiteDeathTemplate: ITemplateItem = {
     _type: ItemType.ITEM,
     _proto: "572b7d8524597762b472f9d1",
     _props: WhiteDeathProps
+}
+
+export const WhiteDeathMaskItem: NewItemDetails = { //the item we want to clone, in this example i will cloning the MP-18
+    newItem: WhiteDeathTemplate,
+    fleaPriceRoubles: 100000, //Self explanatary
+    handbookPriceRoubles: 82500,
+    handbookParentId: "5b47574386f77428ca22b32f", //Handbook Parent Id refers to the category the gun will be under
+    //you see those side box tab thing that only select gun under specific icon? Handbook parent can be found in Aki_Data\Server\database\templates.
+    locales: {
+        en: {
+            name: "Death trooper heavyweight armored mask",
+            shortName: "Death Trooper",
+            description: "The \"Death Trooper\" heavyweight armored mask is for face protection, protecting your troopers with aramid fibers reinforced with titan plating.",
+        },
+    },
+};
+
+export const WhiteDeathMaskItemToClone: NewItemFromCloneDetails = {
+    itemTplToClone: "6570aead4d84f81fd002a033",
+    overrideProperties: WhiteDeathProps,
+    parentId: "5a341c4686f77469e155819e",
+    newId: "66e51a0dd83f775f368f346d",
+    fleaPriceRoubles: 100000,
+    handbookPriceRoubles: 82500,
+    handbookParentId: "5b47574386f77428ca22b32f",
+    locales: {
+        en: {
+            name: "Death trooper heavyweight armored mask",
+            shortName: "Death Trooper",
+            description: "The \"Death Trooper\" heavyweight armored mask is for face protection, protecting your troopers with aramid fibers reinforced with titan plating.",
+        },
+    },
 }
