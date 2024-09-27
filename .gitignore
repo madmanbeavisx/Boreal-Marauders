@@ -8,3 +8,6 @@ dist/madmanbeavis-wintersdeathgear.zip
 LIST_OF_MODS_TODO.csv
 /types
 /dist
+*.docx
+/bundles/*.exe
+bundles/helmets/wintertrooperfastmt.bundle.old

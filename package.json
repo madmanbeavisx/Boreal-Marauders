@@ -1,8 +1,8 @@
 {
-    "name": "winters-death-gear",
-    "version": "0.2.5",
+    "name": "boreal-muruaders",
+    "version": "0.3.2",
     "sptVersion": "~3.9",
-    "loadBefore": [],
+    "loadBefore": ["madmanbeavis-wintersdeathgear"],
     "loadAfter": [],
     "incompatibilities": [],
     "isBundleMod": true,

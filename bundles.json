@@ -1,7 +1,7 @@
 {
     "manifest": [
         {
-            "key": "wintertrooperfastmt.bundle",
+            "key": "facemasks/whitoutdeathsquadmask.bundle",
             "dependencyKeys": [
                 "shaders",
                 "cubemaps",
@@ -9,7 +9,31 @@
             ]
         },
         {
-            "key": "whitoutdeathsquadmask.bundle",
+            "key": "helmets/wintertrooperdayhelm.bundle",
+            "dependencyKeys": [
+                "shaders",
+                "cubemaps",
+                "assets/commonassets/physics/physicsmaterials.bundle"
+            ]
+        },
+        {
+            "key": "helmets/attachments/trooperfastmandible.bundle",
+            "dependencyKeys": [
+                "shaders",
+                "cubemaps",
+                "assets/commonassets/physics/physicsmaterials.bundle"
+            ]
+        },
+        {
+            "key": "helmets/attachments/troopersidearmor.bundle",
+            "dependencyKeys": [
+                "shaders",
+                "cubemaps",
+                "assets/commonassets/physics/physicsmaterials.bundle"
+            ]
+        },
+        {
+            "key": "rigs/boreal_trooper_osprey_plate_carrier.bundle",
             "dependencyKeys": [
                 "shaders",
                 "cubemaps",

@@ -23,3 +23,7 @@
 README.md
 LIST_OF_MODS_TODO.csv
 /.idea
+*.docx
+/bundles/*.exe
+/bundles/**/*.old
+.gitattributes

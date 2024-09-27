@@ -3,92 +3,74 @@ import { IPostDBLoadMod } from "@spt/models/external/IPostDBLoadMod";
 import { ILogger } from "@spt/models/spt/utils/ILogger";
 import { LogTextColor } from "@spt/models/spt/logging/LogTextColor";
 import { IPreSptLoadMod } from "@spt/models/external/IPreSptLoadMod";
-import { CustomItemService } from "@spt/services/mod/CustomItemService";
-import { NewItemFromCloneDetails } from "@spt/models/spt/mod/NewItemDetails";
-import { WhiteDeathMaskItemToClone } from "./Items/facemasks/ItemWhiteDeath";
-import { winterFASTMTPreset, winterTrooperFASTMTFromClone } from "./Items/helmets/WinterTrooperHelmet";
-import {LogBackgroundColor} from "@spt/models/spt/logging/LogBackgroundColor";
-import {ItemHelper} from "@spt/helpers/ItemHelper";
-import {DatabaseServer} from "@spt/servers/DatabaseServer";
-import {Item} from "@spt/models/eft/common/tables/IItem";
-import {IDatabaseTables} from "@spt/models/spt/server/IDatabaseTables";
-import {HashUtil} from "@spt/utils/HashUtil";
-import { Preset } from "./resources/configConsts";
+import { ItemUtilities } from "./resources/ItemUtilities";
+import * as fs from "fs";
+import * as path from "path";
 
-class Mod implements IPreSptLoadMod, IPostDBLoadMod 
-{
-    modName: string = "Winters Death Troopers";
-    private version: string = "0.2.5";
+class Mod implements IPreSptLoadMod, IPostDBLoadMod {
+    public modName: string = "Boreal Marauders";
+    public version: string = "0.3.2";
     private logger: ILogger;
-    private itemHelper: ItemHelper;
-    private customItemService: CustomItemService;
-    private databaseServer: DatabaseServer;
-    private database: IDatabaseTables;
-    private hashUtil: HashUtil;
+    private itemUtilities: ItemUtilities;
+    public oldVersionDirectory: string = "madmanbeavis-wintersdeathgear"
 
 
-    public preSptLoad(container: DependencyContainer): void 
-    {
+    public preSptLoad(container: DependencyContainer): void {
         this.logger = container.resolve<ILogger>("WinstonLogger");
-        this.customItemService = container.resolve<CustomItemService>("CustomItemService");
-        this.itemHelper = container.resolve<ItemHelper>("ItemHelper");
-        this.databaseServer = container.resolve<DatabaseServer>("DatabaseServer");
-        this.hashUtil = container.resolve<HashUtil>("HashUtil");
+        this.checkForOldVersionFolders();
         this.displayCredits();
+    }
+    
 
+    public postDBLoad(container: DependencyContainer): void {
+        this.itemUtilities = new ItemUtilities(container);
+        // Let's add out items that we are cloning to the database.
+        this.itemUtilities.addCustomItems();
+        
+        // Lets add our item presets to the database.
+        this.itemUtilities.addCustomITemPresets();        
+        
+        // Let's modify the filters of the existing items to add our new items.
+        this.itemUtilities.refreshDatabase();
+        this.itemUtilities.doEditsToItemFilters(); 
+
+        this.displayDoneMessage();
     }
 
-    public postDBLoad(container: DependencyContainer): void 
-    {
+    
 
-        const clonedItemsToAdd: NewItemFromCloneDetails[] = [
-            WhiteDeathMaskItemToClone,
-            winterTrooperFASTMTFromClone
-        ];
+    private displayCredits() {
+        this.logger.log(`[${this.modName}] *********************************************`, LogTextColor.CYAN);
+        this.logger.log(`[${this.modName}] ***** ${this.modName} - ${this.version} ******`, LogTextColor.CYAN);
+        this.logger.log(`[${this.modName}] **** My first mod to bring to you guys. *****`, LogTextColor.CYAN);
+        this.logger.log(`[${this.modName}] **** Developers:           MadManBeavis *****`, LogTextColor.CYAN);
+        this.logger.log(`[${this.modName}] **** Be gentile it's my first time ;) *******`, LogTextColor.CYAN);
+        this.logger.log(`[${this.modName}] *********************************************`, LogTextColor.CYAN);
+    } 
 
-        clonedItemsToAdd.forEach(item =>
-        {
-            this.customItemService.createItemFromClone(item);
-        })
-
-        this.database = this.databaseServer.getTables();
-        const itemPresets = this.database.globals.ItemPresets;
-        const newPresets: Preset[] = [
-            winterFASTMTPreset
-        ]
-
-        newPresets.forEach(preset => {
-            itemPresets[preset._id] = preset
-        })
+    private displayDoneMessage() {
+        this.logger.log(`[${mod.modName}] Thank you for using ${this.modName} please report any issues.`, LogTextColor.CYAN)
     }
 
-    private displayCredits() 
-    {
-        this.logger.logWithColor(
-            `[${this.modName}] *********************************************`,
-            LogTextColor.GREEN, LogBackgroundColor.BLUE
-        );
-        this.logger.logWithColor(
-            `[${this.modName}] ***** ${this.modName} - ${this.version} ********`,
-            LogTextColor.GREEN, LogBackgroundColor.BLUE
-        );
-        this.logger.logWithColor(
-            `[${this.modName}] **** My first mod to bring to you guys. *****`,
-            LogTextColor.GREEN, LogBackgroundColor.BLUE
-        );
-        this.logger.logWithColor(
-            `[${this.modName}] **** Developers:           MadManBeavis *****`,
-            LogTextColor.GREEN, LogBackgroundColor.BLUE
-        );
-        this.logger.logWithColor(
-            `[${this.modName}] **** Be gentile it's my first time ;) *******`,
-            LogTextColor.GREEN, LogBackgroundColor.BLUE
-        );
-        this.logger.logWithColor(
-            `[${this.modName}] *********************************************`,
-            LogTextColor.GREEN, LogBackgroundColor.BLUE
-        );
-    }   
+    private checkForOldVersionFolders() {
+        const currentDirectory = process.cwd();
+        const targetDirectory = path.join(currentDirectory, "user/mods");
+        const folderToRemove = path.join(targetDirectory, this.oldVersionDirectory);
+
+        if (fs.existsSync(folderToRemove)) {
+            this.logger.debug(`[${mod.modName}] User is using version older than 0.3.5 removing directory.`)
+            fs.promises.rm(folderToRemove, { recursive: true, force: true })
+                .then(() => {
+                    console.log(`Successfully removed folder: ${folderToRemove}`);
+                })
+                .catch((error) => {
+                    console.error(`Error removing folder: ${error.message}`);
+                });
+        }
+        else {
+            this.logger.debug(`[${mod.modName}] Thank you for using the current version for this mod.`)
+        }        
+    }
 }
 
 export const mod = new Mod();

@@ -12,15 +12,15 @@
     "rules": {
         "no-prototype-builtins": "off",
         "@typescript-eslint/no-explicit-any": 0,
-        "@typescript-eslint/no-unused-vars": 1,
+        "@typescript-eslint/no-unused-vars": 0,
         "@typescript-eslint/no-empty-interface": 0,
         "@typescript-eslint/no-namespace": 0,
-        "@typescript-eslint/comma-dangle": 1,
+        "@typescript-eslint/comma-dangle": ["error", "never"],
         "@typescript-eslint/func-call-spacing": 2,
         "@typescript-eslint/quotes": 1,
         "@typescript-eslint/brace-style": [
             "warn",
-            "allman"
+            "stroustrup"
         ],
         "@typescript-eslint/naming-convention": [
             "warn",

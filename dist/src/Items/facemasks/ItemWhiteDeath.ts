@@ -1,7 +1,7 @@
 import { ITemplateItem, ItemType, Props } from "@spt/models/eft/common/tables/ITemplateItem";
 import { NewItemDetails, NewItemFromCloneDetails } from "@spt/models/spt/mod/NewItemDetails";
 
-const WhiteDeathProps: Props = {
+const whiteDeathProps: Props = {
     Name: "white_death_mask",
     ShortName: "white_death_mask",
     Description: "white_death_mask",
@@ -13,7 +13,7 @@ const WhiteDeathProps: Props = {
     Rarity: "SuperRare",
     ItemSound: "gear_generic",
     Prefab: {
-        path: "whitoutdeathsquadmask.bundle",
+        path: "facemasks/whitoutdeathsquadmask.bundle",
         rcid: ""
     },
     StackObjectsCount: 1,
@@ -117,33 +117,33 @@ const WhiteDeathProps: Props = {
     weaponErgonomicPenalty: 0
 }
 
-export const WhiteDeathTemplate: ITemplateItem = {
+export const whiteDeathTemplate: ITemplateItem = {
     _id: "66e51a0dd83f775f368f346d",
     _name: "white_death_mask",
     _parent: "5a341c4686f77469e155819e",
     _type: ItemType.ITEM,
     _proto: "572b7d8524597762b472f9d1",
-    _props: WhiteDeathProps
+    _props: whiteDeathProps
 }
 
-export const WhiteDeathMaskItem: NewItemDetails = { //the item we want to clone, in this example i will cloning the MP-18
-    newItem: WhiteDeathTemplate,
+export const whiteDeathMaskItem: NewItemDetails = { //the item we want to clone, in this example i will cloning the MP-18
+    newItem: whiteDeathTemplate,
     fleaPriceRoubles: 100000, //Self explanatary
     handbookPriceRoubles: 82500,
     handbookParentId: "5b47574386f77428ca22b32f", //Handbook Parent Id refers to the category the gun will be under
     //you see those side box tab thing that only select gun under specific icon? Handbook parent can be found in Aki_Data\Server\database\templates.
     locales: {
         en: {
-            name: "Death trooper heavyweight armored mask",
-            shortName: "Death Trooper",
-            description: "The \"Death Trooper\" heavyweight armored mask is for face protection, protecting your troopers with aramid fibers reinforced with titan plating.",
-        },
-    },
+            name: "Boreal Marauder Heavyweight Armored Mask",
+            shortName: "Boreal's Fear",
+            description: "The \"Boreal's Fear\" Heavyweight Armored Mask is for face protection, protecting your Elites with aramid fibers reinforced with titan plating."
+        }
+    }
 };
 
-export const WhiteDeathMaskItemToClone: NewItemFromCloneDetails = {
+export const whiteDeathMaskItemToClone: NewItemFromCloneDetails = {
     itemTplToClone: "6570aead4d84f81fd002a033",
-    overrideProperties: WhiteDeathProps,
+    overrideProperties: whiteDeathProps,
     parentId: "5a341c4686f77469e155819e",
     newId: "66e51a0dd83f775f368f346d",
     fleaPriceRoubles: 100000,
@@ -151,9 +151,9 @@ export const WhiteDeathMaskItemToClone: NewItemFromCloneDetails = {
     handbookParentId: "5b47574386f77428ca22b32f",
     locales: {
         en: {
-            name: "Death trooper heavyweight armored mask",
-            shortName: "Death Trooper",
-            description: "The \"Death Trooper\" heavyweight armored mask is for face protection, protecting your troopers with aramid fibers reinforced with titan plating.",
-        },
-    },
+            name: "Boreal Marauder Heavyweight Armored Mask",
+            shortName: "Boreal's Fear",
+            description: "The \"Boreal's Fear\" Heavyweight Armored Mask is for face protection, protecting your Elites with aramid fibers reinforced with titan plating."
+        }
+    }
 }
