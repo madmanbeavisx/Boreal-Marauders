@@ -3,11 +3,11 @@ README.md
 /src_assets
 /node_modules
 package-lock.json
-dist/madmanbeavis-wintersdeathgear.zip
 /.idea
-LIST_OF_MODS_TODO.csv
+**/*.csv
 /types
 /dist
-*.docx
+**/*.docx
 /bundles/*.exe
 bundles/helmets/wintertrooperfastmt.bundle.old
+**/*.psd

@@ -16,7 +16,10 @@ const trooperFastSideArmorPropsToOverride: Props ={
     BackgroundColor: "blue",
     CanSellOnRagfair: true,
     CanRequireOnRagfair: false,
-    RagFairCommissionModifier: 1
+    RagFairCommissionModifier: 1,
+    MaxDurability: 35,
+    armorClass: 5,
+    Weight: 1.24
 }
 
 export const borealFastSideArmor: NewItemFromCloneDetails = {
@@ -49,7 +52,10 @@ const trooperFastMandiblePropsToOverride: Props ={
     BackgroundColor: "blue",
     CanSellOnRagfair: true,
     CanRequireOnRagfair: false,
-    RagFairCommissionModifier: 1
+    RagFairCommissionModifier: 1,
+    MaxDurability: 40,
+    armorClass: 5,
+    Weight: 1.76
 }
 
 export const borealFastMandible: NewItemFromCloneDetails = {

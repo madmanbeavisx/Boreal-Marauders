@@ -86,7 +86,7 @@ const whiteDeathProps: Props = {
     BlocksEyewear: true,
     BlocksFaceCover: true,
     BlocksHeadwear:false,
-    Durability: 40,
+    Durability: 50,
     MaxDurability: 40,
     RepairCost: 120,
     RepairSpeed: 0,

@@ -27,3 +27,4 @@ LIST_OF_MODS_TODO.csv
 /bundles/*.exe
 /bundles/**/*.old
 .gitattributes
+**/*.psd

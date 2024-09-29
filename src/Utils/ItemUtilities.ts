@@ -4,15 +4,15 @@ import { DependencyContainer } from "tsyringe";
 import { borealFASTMTv2FromClone, winterFASTMTV2Preset } from "../Items/helmets/BorealDayHelmet";
 import { borealFastMandible, borealFastSideArmor } from "../Items/helmets/attachments/FastAttachments";
 import { ILogger } from "@spt/models/spt/utils/ILogger";
-import { Preset } from "./utilities";
 import { whiteDeathMaskItemToClone } from "../Items/facemasks/ItemWhiteDeath";
 import { NewItemFromCloneDetails } from "@spt/models/spt/mod/NewItemDetails";
 import { CustomItemService } from "@spt/services/mod/CustomItemService";
-import { ItemMap } from "./ItemMap";
-import { CustomItemMap } from "./CustomItemMap";
 import { borealOspreyProtectionPreset, borealOspreyProtectionFromClone } from "../Items/rigs/BorealOspreyProtection";
 import { mod } from "../mod";
 import { LogTextColor } from "@spt/models/spt/logging/LogTextColor";
+import { ItemMap } from "../resources/ItemMap";
+import { CustomItemMap } from "../resources/CustomItemMap";
+import { Preset } from "./utilities";
 
 export interface IITemsToUpdateFilters {
     itemIdToFixFiltersOn: string;

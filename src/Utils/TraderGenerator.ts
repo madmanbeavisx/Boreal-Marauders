@@ -4,7 +4,7 @@ import { ITraderConfig, UpdateTime } from "@spt/models/spt/config/ITraderConfig"
 import { IDatabaseTables } from "@spt/models/spt/server/IDatabaseTables";
 import { ImageRouter } from "@spt/routers/ImageRouter";
 import { JsonUtil } from "@spt/utils/JsonUtil";
-import { ITraderDetails } from "./utilities";
+import { ITraderDetails } from "../Utils/utilities";
 
 export class TraderGenerator {
     public registerProfileImage(

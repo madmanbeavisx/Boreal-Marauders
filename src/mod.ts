@@ -1,22 +1,24 @@
 import { DependencyContainer } from "tsyringe";
 import { IPostDBLoadMod } from "@spt/models/external/IPostDBLoadMod";
-import { ILogger } from "@spt/models/spt/utils/ILogger";
 import { LogTextColor } from "@spt/models/spt/logging/LogTextColor";
 import { IPreSptLoadMod } from "@spt/models/external/IPreSptLoadMod";
-import { ItemUtilities } from "./resources/ItemUtilities";
 import * as fs from "fs";
 import * as path from "path";
+import { InstanceManager } from "./Utils/InstanceManager";
+import { ItemUtilities } from "./Utils/ItemUtilities";
 
 class Mod implements IPreSptLoadMod, IPostDBLoadMod {
     public modName: string = "Boreal Marauders";
     public version: string = "0.3.2";
-    private logger: ILogger;
     private itemUtilities: ItemUtilities;
     public oldVersionDirectory: string = "madmanbeavis-wintersdeathgear"
 
 
+    private instance: InstanceManager = new InstanceManager();
+
+
     public preSptLoad(container: DependencyContainer): void {
-        this.logger = container.resolve<ILogger>("WinstonLogger");
+        this.instance.preSptLoad(container);
         this.checkForOldVersionFolders();
         this.displayCredits();
     }
@@ -40,16 +42,16 @@ class Mod implements IPreSptLoadMod, IPostDBLoadMod {
     
 
     private displayCredits() {
-        this.logger.log(`[${this.modName}] *********************************************`, LogTextColor.CYAN);
-        this.logger.log(`[${this.modName}] ***** ${this.modName} - ${this.version} ******`, LogTextColor.CYAN);
-        this.logger.log(`[${this.modName}] **** My first mod to bring to you guys. *****`, LogTextColor.CYAN);
-        this.logger.log(`[${this.modName}] **** Developers:           MadManBeavis *****`, LogTextColor.CYAN);
-        this.logger.log(`[${this.modName}] **** Be gentile it's my first time ;) *******`, LogTextColor.CYAN);
-        this.logger.log(`[${this.modName}] *********************************************`, LogTextColor.CYAN);
+        this.instance.logger.log(`[${this.modName}] *********************************************`, LogTextColor.CYAN);
+        this.instance.logger.log(`[${this.modName}] ***** ${this.modName} - ${this.version} ******`, LogTextColor.CYAN);
+        this.instance.logger.log(`[${this.modName}] **** My first mod to bring to you guys. *****`, LogTextColor.CYAN);
+        this.instance.logger.log(`[${this.modName}] **** Developers:           MadManBeavis *****`, LogTextColor.CYAN);
+        this.instance.logger.log(`[${this.modName}] **** Be gentile it's my first time ;) *******`, LogTextColor.CYAN);
+        this.instance.logger.log(`[${this.modName}] *********************************************`, LogTextColor.CYAN);
     } 
 
     private displayDoneMessage() {
-        this.logger.log(`[${mod.modName}] Thank you for using ${this.modName} please report any issues.`, LogTextColor.CYAN)
+        this.instance.logger.log(`[${mod.modName}] Thank you for using ${this.modName} please report any issues.`, LogTextColor.CYAN)
     }
 
     private checkForOldVersionFolders() {
@@ -58,7 +60,7 @@ class Mod implements IPreSptLoadMod, IPostDBLoadMod {
         const folderToRemove = path.join(targetDirectory, this.oldVersionDirectory);
 
         if (fs.existsSync(folderToRemove)) {
-            this.logger.debug(`[${mod.modName}] User is using version older than 0.3.5 removing directory.`)
+            this.instance.logger.debug(`[${mod.modName}] User is using version older than 0.3.5 removing directory.`)
             fs.promises.rm(folderToRemove, { recursive: true, force: true })
                 .then(() => {
                     console.log(`Successfully removed folder: ${folderToRemove}`);
@@ -68,7 +70,7 @@ class Mod implements IPreSptLoadMod, IPostDBLoadMod {
                 });
         }
         else {
-            this.logger.debug(`[${mod.modName}] Thank you for using the current version for this mod.`)
+            this.instance.logger.debug(`[${mod.modName}] Thank you for using the current version for this mod.`)
         }        
     }
 }
