@@ -1,0 +1,50 @@
+{
+    "66fafe086fda176478859a20": {
+        "QuestName": "frostbite_sighting",
+        "_id": "66fafe086fda176478859a20",
+        "acceptPlayerMessage": "frostbite_sighting acceptPlayerMessage",
+        "canShowNotificationsInGame": true,
+        "canChangeQuestMessageText": "frostbite_sighting changeQuestMessageText",
+        "completePlayerMessage": "frostbite_sighting completePlayerMessage",
+        "conditions": {
+            "AvailableForFinish": [
+                {
+                    "conditionType": "HandoverItem",
+                    "dogtagLevel": 0,
+                    "dynamicLocale": false,
+                    "globalQuestCounterId": "",
+                    "id": "frostbite_sighting AFF_0",
+                    "index": 0,
+                    "isEncoded": false,
+                    "maxDurability": 100,
+                    "minDurability": 0,
+                    "onlyFoundInRaid": false,
+                    "parentId": "",
+                    "target": [
+                        "5839a40f24597726f856b511"
+                    ],
+                    "value": 1,
+                    "visibilityConditions": []
+                }
+            ],
+            "AvailableForStart": [
+                {
+                    "availableAfter": 0,
+                    "conditionType": "Quest",
+                    "dispersion": 0,
+                    "dynamicLocale": false,
+                    "globalQuestCounterId": "",
+                    "id": "viperintroreq",
+                    "index": 0,
+                    "parentId": "",
+                    "status": [
+                        4
+                    ],
+                    "target": "skier_viper",
+                    "visibilityConditions": []
+                }
+            ],
+            "Fail": []
+        }
+    }
+}

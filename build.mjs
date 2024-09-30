@@ -1,4 +1,15 @@
 #!/usr/bin/env node
+/**
+ * This is a modified version of Refring's build.mjs
+ * This is made to allow for use of Virtual's Custom Quest
+ * 
+ * Pleace in the root of your project a `quest` folder and the files and structre that you need in there.
+ * This will place the files where they need to be when you use the build command.
+ * 
+ * Please review the documentation below as a suppliment.
+ * 
+ * @author MadManBeavis
+ */
 
 /**
  * Build Script
@@ -25,7 +36,7 @@
  * - Ensure that all necessary Node.js modules are installed before running the script: `npm install`
  * - The script reads configurations from the `package.json` and `.buildignore` files; ensure they are correctly set up.
  *
- * @author Refringe
+ * original author Refringe
  * @version v1.0.0
  */
 
@@ -46,7 +57,7 @@ const logColors = {
     error: "red",
     warn: "yellow",
     info: "grey",
-    success: "green",
+    success: "green"
 };
 winston.addColors(logColors);
 
@@ -57,7 +68,7 @@ const logger = winston.createLogger({
         error: 0,
         warn: 1,
         success: 2,
-        info: 3,
+        info: 3
     },
     format: winston.format.combine(
         winston.format.colorize(),
@@ -67,9 +78,9 @@ const logger = winston.createLogger({
     ),
     transports: [
         new winston.transports.Console({
-            level: verbose ? "info" : "success",
-        }),
-    ],
+            level: verbose ? "info" : "success"
+        })
+    ]
 });
 
 /**
@@ -113,7 +124,24 @@ async function main() {
         await copyFiles(currentDir, projectDir, buildIgnorePatterns);
         logger.log("success", "Files successfully copied to temporary directory.");
 
-        // Create a zip archive of the project files.
+        // Create the mod folder structure under 'dist/user/mods'
+        const modsDir = path.join(distDir, "user", "mods");
+        await fs.ensureDir(modsDir);
+
+        // 1. Create the folder that is currently created
+        const customModDir = path.join(modsDir, projectName);
+        await fs.ensureDir(customModDir);
+
+        // 2. Create the 'Virtual's Custom Quest Loader' folder
+        const customQuestLoaderDir = path.join(modsDir, "Virtual's Custom Quest Loader");
+        await fs.ensureDir(customQuestLoaderDir);
+
+        // 3. Move the contents of the quests folder from the root to 'Virtual's Custom Quest Loader'
+        const questSourceDir = path.join(currentDir, "quests");
+        await fs.copy(questSourceDir, customQuestLoaderDir);
+        logger.log("success", "'quests' folder successfully copied to 'Virtual's Custom Quest Loader'.");
+
+        // Continue with ZIP creation and other build steps
         logger.log("info", "Beginning folder compression...");
         const zipFilePath = path.join(path.dirname(projectDir), `${projectName}.zip`);
         await createZipFile(projectDir, zipFilePath, "user/mods/" + projectName);
@@ -130,31 +158,31 @@ async function main() {
         await fs.move(projectDir, distDir);
         logger.log("success", "Temporary directory successfully moved into project distribution directory.");
 
-        // Log the success message. Write out the path to the mod package.
+        // Log the success message.
         logger.log("success", "------------------------------------");
         logger.log("success", "Build script completed successfully!");
         logger.log("success", "Your mod package has been created in the 'dist' directory:");
         logger.log("success", `/${path.relative(process.cwd(), path.join(distDir, `${projectName}.zip`))}`);
         logger.log("success", "------------------------------------");
-        if (!verbose) {
-            logger.log("success", "To see a detailed build log, use `npm run buildinfo`.");
-            logger.log("success", "------------------------------------");
-        }
-    } catch (err) {
+    }
+    catch (err) {
         // If any of the file operations fail, log the error.
         logger.log("error", "An error occurred: " + err);
-    } finally {
+    }
+    finally {
         // Clean up the temporary directory, even if the build fails.
         if (projectDir) {
             try {
                 await fs.promises.rm(projectDir, { force: true, recursive: true });
                 logger.log("info", "Cleaned temporary directory.");
-            } catch (err) {
+            }
+            catch (err) {
                 logger.log("error", "Failed to clean temporary directory: " + err);
             }
         }
     }
 }
+
 
 /**
  * Retrieves the current working directory where the script is being executed. This directory is used as a reference
@@ -185,7 +213,8 @@ async function loadBuildIgnoreFile(currentDir) {
 
         // Return a new ignore instance and add the rules from the .buildignore file (split by newlines).
         return ignore().add(fileContent.split("\n"));
-    } catch (err) {
+    }
+    catch (err) {
         logger.log("warn", "Failed to read .buildignore file. No files or directories will be ignored.");
 
         // Return an empty ignore instance, ensuring the build process can continue.
@@ -306,7 +335,8 @@ async function copyFiles(srcDir, destDir, ignoreHandler) {
                 // to copyFiles to handle copying the contents of the directory.
                 await fs.ensureDir(destPath);
                 copyOperations.push(copyFiles(srcPath, destPath, ignoreHandler));
-            } else {
+            }
+            else {
                 // If the entry is a file, add a copyFile operation to the copyOperations array and log the event when
                 // the operation is successful.
                 copyOperations.push(
@@ -319,7 +349,8 @@ async function copyFiles(srcDir, destDir, ignoreHandler) {
 
         // Await all copy operations to ensure all files and directories are copied before exiting the function.
         await Promise.all(copyOperations);
-    } catch (err) {
+    }
+    catch (err) {
         // Log an error message if any error occurs during the copy process.
         logger.log("error", "Error copying files: " + err);
     }
@@ -341,7 +372,7 @@ async function createZipFile(directoryToZip, zipFilePath, containerDirName) {
 
         // Create a new archiver instance with ZIP format and maximum compression level.
         const archive = archiver("zip", {
-            zlib: { level: 9 },
+            zlib: { level: 9 }
         });
 
         // Set up an event listener for the 'close' event to resolve the promise when the archiver has finalized.
@@ -355,7 +386,8 @@ async function createZipFile(directoryToZip, zipFilePath, containerDirName) {
         archive.on("warning", function (err) {
             if (err.code === "ENOENT") {
                 logger.log("warn", `Archiver issued a warning: ${err.code} - ${err.message}`);
-            } else {
+            }
+            else {
                 reject(err);
             }
         });
