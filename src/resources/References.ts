@@ -1,31 +1,35 @@
-import { BotController } from "@spt/controllers/BotController"
-import { BotHelper } from "@spt/helpers/BotHelper"
-import { ItemHelper } from "@spt/helpers/ItemHelper"
+import { DependencyContainer } from "tsyringe"
+
+import { StaticRouterModService } from "@spt/services/mod/staticRouter/StaticRouterModService"
+import { OnUpdateModService } from "@spt/services/mod/onUpdate/OnUpdateModService"
+import { CustomItemService } from "@spt/services/mod/CustomItemService"
+import { RagfairPriceService } from "@spt/services/RagfairPriceService"
 import { ProbabilityHelper } from "@spt/helpers/ProbabilityHelper"
 import { ProfileHelper } from "@spt/helpers/ProfileHelper"
 import { TraderHelper } from "@spt/helpers/TraderHelper"
-import { PreSptModLoader } from "@spt/loaders/PreSptModLoader"
+import { ItemHelper } from "@spt/helpers/ItemHelper"
+import { BotHelper } from "@spt/helpers/BotHelper"
+import { DatabaseServer } from "@spt/servers/DatabaseServer"
+import { ConfigServer } from "@spt/servers/ConfigServer"
+import { SaveServer } from "@spt/servers/SaveServer"
 import { IDatabaseTables } from "@spt/models/spt/server/IDatabaseTables"
 import { ILogger } from "@spt/models/spt/utils/ILogger"
-import { ImageRouter } from "@spt/routers/ImageRouter"
-import { ConfigServer } from "@spt/servers/ConfigServer"
-import { DatabaseServer } from "@spt/servers/DatabaseServer"
-import { SaveServer } from "@spt/servers/SaveServer"
-import { CustomItemService } from "@spt/services/mod/CustomItemService"
-import { OnUpdateModService } from "@spt/services/mod/onUpdate/OnUpdateModService"
-import { StaticRouterModService } from "@spt/services/mod/staticRouter/StaticRouterModService"
-import { RagfairPriceService } from "@spt/services/RagfairPriceService"
-import { HashUtil } from "@spt/utils/HashUtil"
 import { HttpResponseUtil } from "@spt/utils/HttpResponseUtil"
 import { ImporterUtil } from "@spt/utils/ImporterUtil"
-import { JsonUtil } from "@spt/utils/JsonUtil"
 import { RandomUtil } from "@spt/utils/RandomUtil"
+import { HashUtil } from "@spt/utils/HashUtil"
+import { JsonUtil } from "@spt/utils/JsonUtil"
 import { VFS } from "@spt/utils/VFS"
-import { DependencyContainer } from "tsyringe"
+import { BotController } from "@spt/controllers/BotController"
+import { PreSptModLoader } from "@spt/loaders/PreSptModLoader"
+import { ImageRouter } from "@spt/routers/ImageRouter"
+import { ItemUtilities } from "../Utils/ItemUtilities"
+import { LogTextColor } from "@spt/models/spt/logging/LogTextColor"
 
-export class InstanceManager {
+export class References {
     public modName: string
     public debug: boolean
+    public version: string
 
     public container: DependencyContainer
     public preSptModLoader: PreSptModLoader
@@ -35,7 +39,6 @@ export class InstanceManager {
     public logger: ILogger
     public staticRouter: StaticRouterModService
     public onUpdateModService: OnUpdateModService
-
     public database: DatabaseServer
     public customItem: CustomItemService
     public imageRouter: ImageRouter
@@ -52,6 +55,8 @@ export class InstanceManager {
     public traderHelper: TraderHelper
     public botController: BotController
     public httpResponse: HttpResponseUtil
+    public itemUtilities: ItemUtilities
+    
 
     public preSptLoad(container: DependencyContainer): void {
         this.container = container
@@ -99,5 +104,16 @@ export class InstanceManager {
         this.probHelper = container.resolve<ProbabilityHelper>("ProbabilityHelper")
         this.botController = container.resolve<BotController>("BotController")
         this.httpResponse = container.resolve<HttpResponseUtil>("HttpResponseUtil")
+        this.itemUtilities = new ItemUtilities(container);
+    }
+
+    public customDebugLogger(textString: string): void {
+        if (this.debug){
+            this.logger.log(`[${this.modName}] ${textString}`, LogTextColor.RED);
+        }
+    }
+
+    public customLogger(textString: string): void {
+        this.logger.log(`[${this.modName}] ${textString}`, LogTextColor.CYAN);
     }
 }

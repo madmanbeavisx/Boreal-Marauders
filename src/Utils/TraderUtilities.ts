@@ -4,8 +4,14 @@ import { ITraderConfig, UpdateTime } from "@spt/models/spt/config/ITraderConfig"
 import { IDatabaseTables } from "@spt/models/spt/server/IDatabaseTables"
 import { ImageRouter } from "@spt/routers/ImageRouter"
 import { JsonUtil } from "@spt/utils/JsonUtil"
+import { References } from "../resources/References"
 
 export class TraderUtils {
+    ref: References
+    constructor (ref: References) {
+        this.ref = ref
+    }
+
     /**
 	 * Add profile picture to our trader
 	 * @param baseJson json file for trader (db/base.json)
@@ -54,6 +60,7 @@ export class TraderUtils {
                 fail: {}
             }
         }
+        this.ref.customDebugLogger(`Added Trader to DB: ${JSON.stringify(tables.traders[traderDetailsToAdd._id])}`);
     }
 
     /**

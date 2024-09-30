@@ -11,3 +11,5 @@ package-lock.json
 /bundles/*.exe
 bundles/helmets/wintertrooperfastmt.bundle.old
 **/*.psd
+**/*.py
+**/*.bak

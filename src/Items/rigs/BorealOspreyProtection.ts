@@ -18,7 +18,7 @@ const borealOspreyProtectionProps: Props ={
     RagFairCommissionModifier: 1,
     CanSellOnRagfair: true,
     CanRequireOnRagfair: true,
-    BlocksArmorVest: false
+    BlocksArmorVest: true
 }
 
 export const borealOspreyProtectionFromClone: NewItemFromCloneDetails = {

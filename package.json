@@ -1,8 +1,11 @@
 {
     "name": "boreal-muruaders",
-    "version": "0.3.2",
+    "version": "0.5.0",
     "sptVersion": "~3.9",
-    "loadBefore": ["madmanbeavis-wintersdeathgear"],
+    "loadBefore": [
+        "madmanbeavis-wintersdeathgear",
+        "Virtual's Custom Quest Loader"
+    ],
     "loadAfter": [],
     "incompatibilities": [],
     "isBundleMod": true,

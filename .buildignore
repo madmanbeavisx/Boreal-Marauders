@@ -28,3 +28,5 @@ LIST_OF_MODS_TODO.csv
 /bundles/**/*.old
 .gitattributes
 **/*.psd
+**/*.py
+**/*.bak

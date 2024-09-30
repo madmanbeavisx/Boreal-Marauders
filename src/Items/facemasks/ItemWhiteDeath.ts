@@ -103,7 +103,7 @@ const whiteDeathProps: Props = {
     },
     DeafStrength: "None",
     BluntThroughput: 0.198,
-    ArmorMaterial: "Aramid Hybrid",
+    ArmorMaterial: "Aramid",
     BlindnessProtection: 0.3,
     ArmorType: "Heavy",
     armorColliders: [
