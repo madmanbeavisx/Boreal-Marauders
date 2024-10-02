@@ -30,3 +30,4 @@ LIST_OF_MODS_TODO.csv
 **/*.psd
 **/*.py
 **/*.bak
+/quests

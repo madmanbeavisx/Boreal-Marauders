@@ -1,5 +1,13 @@
 import { Upd } from "@spt/models/eft/common/tables/IItem";
 
+export interface SlotSize {
+    name: string,
+    itemId: string,
+    horizontal: number,
+    vertical: number,
+    removeFilters: boolean
+}
+
 /* eslint-disable @typescript-eslint/naming-convention */
 export interface Item {
     _id: string;

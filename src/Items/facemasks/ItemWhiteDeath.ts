@@ -6,11 +6,11 @@ const whiteDeathProps: Props = {
     ShortName: "white_death_mask",
     Description: "white_death_mask",
     Weight: 1.5,
-    BackgroundColor: "default",
+    BackgroundColor: "blue",
     Width: 2,
     Height: 2,
     StackMaxSize: 1,
-    Rarity: "SuperRare",
+    Rarity: "Superrare",
     ItemSound: "gear_generic",
     Prefab: {
         path: "facemasks/whitoutdeathsquadmask.bundle",

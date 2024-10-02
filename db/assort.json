@@ -912,7 +912,7 @@
             "_id": "b1c148162960acf7948047dd",
             "_tpl": "5447a9cd4bdc2dbd208b4567",
             "upd": {
-                "StackObjectsCount": 1,
+                "StackObjectsCount": 3,
                 "sptPresetId": "5af08cf886f774223c269184",
                 "Repairable": {
                     "Durability": 100,
@@ -982,7 +982,7 @@
             "_id": "6ff4ab002c67b0e266cc6d0a",
             "_tpl": "637b60c3b7afa97bfc3d7001",
             "upd": {
-                "StackObjectsCount": 1
+                "StackObjectsCount": 5
             },
             "parentId": "hideout",
             "slotId": "hideout"
@@ -991,7 +991,7 @@
             "_id": "b571ee27209b5db0bea57408",
             "_tpl": "5ed51652f6c34d2cc26336a1",
             "upd": {
-                "StackObjectsCount": 1
+                "StackObjectsCount": 5
             },
             "parentId": "hideout",
             "slotId": "hideout"
@@ -1000,7 +1000,7 @@
             "_id": "5055591ceaedf2efc6df22f7",
             "_tpl": "544fb3f34bdc2d03748b456a",
             "upd": {
-                "StackObjectsCount": 1
+                "StackObjectsCount": 8
             },
             "parentId": "hideout",
             "slotId": "hideout"
@@ -1009,7 +1009,7 @@
             "_id": "33a874000643c6ca03e07245",
             "_tpl": "5c0e530286f7747fa1419862",
             "upd": {
-                "StackObjectsCount": 1
+                "StackObjectsCount": 8
             },
             "parentId": "hideout",
             "slotId": "hideout"
@@ -1018,7 +1018,7 @@
             "_id": "ac438d2d24d3b06a0c0f9d1c",
             "_tpl": "5af0454c86f7746bf20992e8",
             "upd": {
-                "StackObjectsCount": 1
+                "StackObjectsCount": 10
             },
             "parentId": "hideout",
             "slotId": "hideout"
@@ -1027,7 +1027,7 @@
             "_id": "2c866d8b60ec4ffa557fee8e",
             "_tpl": "5d02778e86f774203e7dedbe",
             "upd": {
-                "StackObjectsCount": 1,
+                "StackObjectsCount": 7,
                 "MedKit": {
                     "HpResource": 5
                 }
@@ -1039,7 +1039,7 @@
             "_id": "3bec9d0b4cad4f2e746f9d34",
             "_tpl": "5d02797c86f774203f38e30a",
             "upd": {
-                "StackObjectsCount": 1,
+                "StackObjectsCount": 2,
                 "MedKit": {
                     "HpResource": 15
                 }
@@ -1051,7 +1051,7 @@
             "_id": "dcf9ee748dc281c7a960c19c",
             "_tpl": "5755383e24597772cb798966",
             "upd": {
-                "StackObjectsCount": 1,
+                "StackObjectsCount": 6,
                 "MedKit": {
                     "HpResource": 6
                 }
@@ -1063,7 +1063,7 @@
             "_id": "fa0c6f208e4bef4cb6886c63",
             "_tpl": "60098ad7c2240c0fe85c570a",
             "upd": {
-                "StackObjectsCount": 1,
+                "StackObjectsCount": 2,
                 "MedKit": {
                     "HpResource": 400
                 }
@@ -1075,7 +1075,7 @@
             "_id": "a98864b5be30ea03df1400b7",
             "_tpl": "590c678286f77426c9660122",
             "upd": {
-                "StackObjectsCount": 1,
+                "StackObjectsCount": 2,
                 "MedKit": {
                     "HpResource": 300
                 }
@@ -1087,7 +1087,7 @@
             "_id": "faa20effa5f524f613acd89d",
             "_tpl": "544fb45d4bdc2dee738b4568",
             "upd": {
-                "StackObjectsCount": 1,
+                "StackObjectsCount": 2,
                 "MedKit": {
                     "HpResource": 400
                 }
@@ -1099,7 +1099,7 @@
             "_id": "be71f373f455991a9d23b09c",
             "_tpl": "544fb5454bdc2df8738b456a",
             "upd": {
-                "StackObjectsCount": 1
+                "StackObjectsCount": 4
             },
             "parentId": "hideout",
             "slotId": "hideout"
@@ -1108,7 +1108,7 @@
             "_id": "0bb093aa163232df6f3da4e9",
             "_tpl": "5991b51486f77447b112d44f",
             "upd": {
-                "StackObjectsCount": 1
+                "StackObjectsCount": 4
             },
             "parentId": "hideout",
             "slotId": "hideout"
@@ -1117,7 +1117,7 @@
             "_id": "116682366b2b21f396fa29b0",
             "_tpl": "5ac78a9b86f7741cca0bbd8d",
             "upd": {
-                "StackObjectsCount": 1
+                "StackObjectsCount": 4
             },
             "parentId": "hideout",
             "slotId": "hideout"
@@ -1126,7 +1126,7 @@
             "_id": "9841de30ed6e7753373027a7",
             "_tpl": "5b4391a586f7745321235ab2",
             "upd": {
-                "StackObjectsCount": 1
+                "StackObjectsCount": 4
             },
             "parentId": "hideout",
             "slotId": "hideout"
@@ -1162,7 +1162,7 @@
             "_id": "f3e3c36d456fad86295b5106",
             "_tpl": "5b432b965acfc47a8774094e",
             "upd": {
-                "StackObjectsCount": 1
+                "StackObjectsCount": 2
             },
             "parentId": "hideout",
             "slotId": "hideout"
@@ -1171,7 +1171,7 @@
             "_id": "5c0cc10b81da34f24cb460f1",
             "_tpl": "5a16b9fffcdbcb0176308b34",
             "upd": {
-                "StackObjectsCount": 1
+                "StackObjectsCount": 2
             },
             "parentId": "hideout",
             "slotId": "hideout"
@@ -1180,7 +1180,7 @@
             "_id": "e1fcfbb38f64bda64b153f22",
             "_tpl": "603409c80ca681766b6a0fb2",
             "upd": {
-                "StackObjectsCount": 1,
+                "StackObjectsCount": 2,
                 "Repairable": {
                     "Durability": 25,
                     "MaxDurability": 25
@@ -1256,7 +1256,7 @@
             "_id": "b2d1725376ccdafde9a02c99",
             "_tpl": "58d3db5386f77426186285a0",
             "upd": {
-                "StackObjectsCount": 1
+                "StackObjectsCount": 6
             },
             "parentId": "hideout",
             "slotId": "hideout"
@@ -1265,7 +1265,7 @@
             "_id": "c409eb40b931438ba0c4c9d1",
             "_tpl": "5710c24ad2720bc3458b45a3",
             "upd": {
-                "StackObjectsCount": 1
+                "StackObjectsCount": 6
             },
             "parentId": "hideout",
             "slotId": "hideout"
@@ -1274,7 +1274,7 @@
             "_id": "3e18c278fe85cd9672e07a45",
             "_tpl": "5e340dcdcb6d5863cc5e5efb",
             "upd": {
-                "StackObjectsCount": 1
+                "StackObjectsCount": 6
             },
             "parentId": "hideout",
             "slotId": "hideout"
@@ -1283,7 +1283,7 @@
             "_id": "c7d95f0919c46a54c8ccf586",
             "_tpl": "5e32f56fcb6d5863cc5e5ee4",
             "upd": {
-                "StackObjectsCount": 1
+                "StackObjectsCount": 6
             },
             "parentId": "hideout",
             "slotId": "hideout"
@@ -1292,7 +1292,7 @@
             "_id": "5e7366d06f942241794e690f",
             "_tpl": "5e870397991fd70db46995c8",
             "upd": {
-                "StackObjectsCount": 1,
+                "StackObjectsCount": 3,
                 "sptPresetId": "5f06d6bb4010601e3232cd22",
                 "Repairable": {
                     "Durability": 100,
@@ -1759,7 +1759,7 @@
             "parentId": "hideout",
             "slotId": "hideout",
             "upd": {
-                "StackObjectsCount": 1
+                "StackObjectsCount": 500
             }
         },
         {
@@ -1768,7 +1768,7 @@
             "parentId": "hideout",
             "slotId": "hideout",
             "upd": {
-                "StackObjectsCount": 1
+                "StackObjectsCount": 500
             }
         },
         {
@@ -1777,14 +1777,14 @@
             "parentId": "hideout",
             "slotId": "hideout",
             "upd": {
-                "StackObjectsCount": 1
+                "StackObjectsCount": 500
             }
         },
         {
             "_id": "958a8969763721f19a4ccd84",
             "_tpl": "5fc382c1016cce60e8341b20",
             "upd": {
-                "StackObjectsCount": 1
+                "StackObjectsCount": 500
             },
             "parentId": "hideout",
             "slotId": "hideout"
@@ -1795,14 +1795,14 @@
             "parentId": "hideout",
             "slotId": "hideout",
             "upd": {
-                "StackObjectsCount": 1
+                "StackObjectsCount": 500
             }
         },
         {
             "_id": "9d776301be7713d0782f83c1",
             "_tpl": "5e023e88277cce2b522ff2b1",
             "upd": {
-                "StackObjectsCount": 1
+                "StackObjectsCount": 500
             },
             "parentId": "hideout",
             "slotId": "hideout"
@@ -1811,7 +1811,7 @@
             "_id": "fa873d32f90204bb71cba5c6",
             "_tpl": "5d6e689ca4b9361bc8618956",
             "upd": {
-                "StackObjectsCount": 1
+                "StackObjectsCount": 500
             },
             "parentId": "hideout",
             "slotId": "hideout"
@@ -1822,14 +1822,14 @@
             "parentId": "hideout",
             "slotId": "hideout",
             "upd": {
-                "StackObjectsCount": 1
+                "StackObjectsCount": 500
             }
         },
         {
             "_id": "56682d8aa8160a292a9a5903",
             "_tpl": "5d6e68e6a4b9361c140bcfe0",
             "upd": {
-                "StackObjectsCount": 1
+                "StackObjectsCount": 500
             },
             "parentId": "hideout",
             "slotId": "hideout"
@@ -1838,7 +1838,7 @@
             "_id": "88854836ef565b6fa304913f",
             "_tpl": "5d6e6869a4b9361c140bcfde",
             "upd": {
-                "StackObjectsCount": 1
+                "StackObjectsCount": 500
             },
             "parentId": "hideout",
             "slotId": "hideout"
@@ -1847,7 +1847,7 @@
             "_id": "b7a2a0820e2447e9f5c90a19",
             "_tpl": "5d6e6911a4b9361bd5780d52",
             "upd": {
-                "StackObjectsCount": 1
+                "StackObjectsCount": 500
             },
             "parentId": "hideout",
             "slotId": "hideout"
@@ -1856,7 +1856,7 @@
             "_id": "cef34454550c9d65be034035",
             "_tpl": "5d6e68c4a4b9361b93413f79",
             "upd": {
-                "StackObjectsCount": 1
+                "StackObjectsCount": 500
             },
             "parentId": "hideout",
             "slotId": "hideout"
@@ -1865,7 +1865,7 @@
             "_id": "08a33764e78941e2c597ed65",
             "_tpl": "55d4887d4bdc2d962f8b4570",
             "upd": {
-                "StackObjectsCount": 1,
+                "StackObjectsCount": 500,
                 "Repairable": {
                     "Durability": 100,
                     "MaxDurability": 100
@@ -1878,7 +1878,7 @@
             "_id": "c17ddf80b4e35f0c42f7abe3",
             "_tpl": "5d25a6a48abbc306c62e6310",
             "upd": {
-                "StackObjectsCount": 1,
+                "StackObjectsCount": 5,
                 "Repairable": {
                     "Durability": 100,
                     "MaxDurability": 100
@@ -1893,7 +1893,7 @@
             "parentId": "hideout",
             "slotId": "hideout",
             "upd": {
-                "StackObjectsCount": 1
+                "StackObjectsCount": 500
             }
         },
         {
@@ -1902,14 +1902,14 @@
             "parentId": "hideout",
             "slotId": "hideout",
             "upd": {
-                "StackObjectsCount": 1
+                "StackObjectsCount": 500
             }
         },
         {
             "_id": "b15d88b3fb5ca3cac2388dd8",
             "_tpl": "5e023e6e34d52a55c3304f71",
             "upd": {
-                "StackObjectsCount": 1
+                "StackObjectsCount": 500
             },
             "parentId": "hideout",
             "slotId": "hideout"
@@ -1918,7 +1918,7 @@
             "_id": "49cbb12fb52aa27823c49ec1",
             "_tpl": "59e68f6f86f7746c9f75e846",
             "upd": {
-                "StackObjectsCount": 1
+                "StackObjectsCount": 500
             },
             "parentId": "hideout",
             "slotId": "hideout"
@@ -1927,7 +1927,7 @@
             "_id": "af78714b88f0bd8eeb4fd889",
             "_tpl": "62e7c98b550c8218d602cbb4",
             "upd": {
-                "StackObjectsCount": 1,
+                "StackObjectsCount": 500,
                 "Repairable": {
                     "Durability": 100,
                     "MaxDurability": 100
@@ -1942,14 +1942,14 @@
             "parentId": "hideout",
             "slotId": "hideout",
             "upd": {
-                "StackObjectsCount": 1
+                "StackObjectsCount": 5
             }
         },
         {
             "_id": "7e19c0b0b28ef6a478e3bae5",
             "_tpl": "54527a984bdc2d4e668b4567",
             "upd": {
-                "StackObjectsCount": 1
+                "StackObjectsCount": 500
             },
             "parentId": "hideout",
             "slotId": "hideout"
@@ -1960,14 +1960,14 @@
             "parentId": "hideout",
             "slotId": "hideout",
             "upd": {
-                "StackObjectsCount": 1
+                "StackObjectsCount": 500
             }
         },
         {
             "_id": "78e38a979fd62ae0676a8aca",
             "_tpl": "60194943740c5d77f6705eea",
             "upd": {
-                "StackObjectsCount": 1
+                "StackObjectsCount": 500
             },
             "parentId": "hideout",
             "slotId": "hideout"
@@ -1978,7 +1978,7 @@
             "parentId": "hideout",
             "slotId": "hideout",
             "upd": {
-                "StackObjectsCount": 1
+                "StackObjectsCount": 500
             }
         },
         {
@@ -1987,14 +1987,14 @@
             "parentId": "hideout",
             "slotId": "hideout",
             "upd": {
-                "StackObjectsCount": 1
+                "StackObjectsCount": 500
             }
         },
         {
             "_id": "b127b9386ee8ec5e1eef662a",
             "_tpl": "56dff2ced2720bb4668b4567",
             "upd": {
-                "StackObjectsCount": 1
+                "StackObjectsCount": 500
             },
             "parentId": "hideout",
             "slotId": "hideout"
@@ -2003,7 +2003,7 @@
             "_id": "b4f38b7b0310f0f7a797ad8f",
             "_tpl": "56dff3afd2720bba668b4567",
             "upd": {
-                "StackObjectsCount": 1
+                "StackObjectsCount": 500
             },
             "parentId": "hideout",
             "slotId": "hideout"
@@ -2012,7 +2012,7 @@
             "_id": "6ed90448ee953bb9a8ea993f",
             "_tpl": "56dff4a2d2720bbd668b456a",
             "upd": {
-                "StackObjectsCount": 1
+                "StackObjectsCount": 500
             },
             "parentId": "hideout",
             "slotId": "hideout"
@@ -2023,7 +2023,7 @@
             "parentId": "hideout",
             "slotId": "hideout",
             "upd": {
-                "StackObjectsCount": 1
+                "StackObjectsCount": 500
             }
         },
         {
@@ -2039,7 +2039,7 @@
             "_id": "f11d264c43cd2b9cb8fbcf33",
             "_tpl": "5bed625c0db834001c062946",
             "upd": {
-                "SpawnedInSession": true
+                "StackObjectsCount": 4
             },
             "parentId": "hideout",
             "slotId": "hideout"

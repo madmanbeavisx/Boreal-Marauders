@@ -58,6 +58,7 @@ class Mod implements IPreSptLoadMod, IPostDBLoadMod {
         // Let's modify the filters of the existing items to add our new items.
         this.ref.itemUtilities.refreshDatabase();
         this.ref.itemUtilities.doEditsToItemFilters(); 
+        this.ref.itemUtilities.doCustomBackpackStashResize();
 
         this.ref.customDebugLogger("Finished adding Items")
 
@@ -78,20 +79,22 @@ class Mod implements IPreSptLoadMod, IPostDBLoadMod {
 
     private displayCredits() {
         this.ref.customLogger("*********************************************");
-        this.ref.customLogger(`***** ${this.modName} - ${this.version} ******`);
+        this.ref.customLogger(`***** ${this.modName} - ${this.version} **************`);
         this.ref.customLogger("**** My first mod to bring to you guys. *****");
         this.ref.customLogger("**** Developers:           MadManBeavis *****");
         this.ref.customLogger("**** Be gentile it's my first time ;) *******");
         this.ref.customLogger("*********************************************");
         this.ref.customLogger("*********************************************");
 
-        this.ref.customLogger("**** Let's give a (finally) welcome to: *****");
+        this.ref.customLogger("**** Let's finally give a welcome to: *******");
+        this.ref.customLogger("**************************************************************************");
         this.ref.customLogger("* ███████╗██████╗  ██████╗ ███████╗████████╗██████╗ ██╗████████╗███████╗ *");
         this.ref.customLogger("* ██╔════╝██╔══██╗██╔═══██╗██╔════╝╚══██╔══╝██╔══██╗██║╚══██╔══╝██╔════╝ *");
         this.ref.customLogger("* █████╗  ██████╔╝██║   ██║███████╗   ██║   ██████╔╝██║   ██║   █████╗   *");
         this.ref.customLogger("* ██╔══╝  ██╔══██╗██║   ██║╚════██║   ██║   ██╔══██╗██║   ██║   ██╔══╝   *");
         this.ref.customLogger("* ██║     ██║  ██║╚██████╔╝███████║   ██║   ██████╔╝██║   ██║   ███████╗ *");
         this.ref.customLogger("* ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚══════╝   ╚═╝   ╚═════╝ ╚═╝   ╚═╝   ╚══════╝ *");                                                           
+        this.ref.customLogger("**************************************************************************");
     } 
 
     private displayDoneMessage() {

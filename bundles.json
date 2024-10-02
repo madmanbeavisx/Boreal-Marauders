@@ -1,6 +1,14 @@
 {
     "manifest": [
         {
+            "key": "backpack/boreal_comm3.bundle",
+            "dependencyKeys": [
+                "shaders",
+                "cubemaps",
+                "assets/commonassets/physics/physicsmaterials.bundle"
+            ]
+        },
+        {
             "key": "facemasks/whitoutdeathsquadmask.bundle",
             "dependencyKeys": [
                 "shaders",

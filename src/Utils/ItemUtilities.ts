@@ -13,6 +13,8 @@ import { LogTextColor } from "@spt/models/spt/logging/LogTextColor";
 import { ItemMap } from "../resources/ItemMap";
 import { CustomItemMap } from "../resources/CustomItemMap";
 import { Preset } from "./utilities";
+import { borealCOMM3FromCloneDetails, borealCOMM3SlotSize } from "../Items/backpacks/BorealCOMM3";
+import { SlotSize } from "../resources/configConsts";
 
 export interface IITemsToUpdateFilters {
     itemIdToFixFiltersOn: string;
@@ -34,6 +36,10 @@ export class ItemUtilities {
         this.logger = container.resolve<ILogger>("WinstonLogger");
         this.customItemService = container.resolve<CustomItemService>("CustomItemService");
     }
+
+    private backpacksToUpdate: SlotSize[] = [
+        borealCOMM3SlotSize
+    ]
 
     private itemsToUpdate: IITemsToUpdateFilters[] = [
         // Update Helmets to use new FAST Side Armor
@@ -83,6 +89,30 @@ export class ItemUtilities {
             }    
         }
     }
+    private customBackpackStashResize(backpacks: SlotSize[]): void {
+        const tables = this.databaseServer.getTables();
+        const items = tables.templates.items;
+
+        let i = 0;
+        while (i < backpacks.length) {
+
+            // Update Base Grid with Configured Cells
+            items[backpacks[i].itemId]._props.Grids[0]._props.cellsH = backpacks[i].horizontal;
+            items[backpacks[i].itemId]._props.Grids[0]._props.cellsV = backpacks[i].vertical;
+
+            // Remove filters if requested to
+            if (backpacks[i].removeFilters === true) {
+                items[backpacks[i].itemId]._props.Grids[0]._props.filters = [];
+            }
+            i++;
+        }
+    }
+
+    public doCustomBackpackStashResize(): void {
+        this.backpacksToUpdate.forEach(backpack =>
+            this.customBackpackStashResize(this.backpacksToUpdate)
+        )
+    }
 
     public doEditsToItemFilters(): void{
         this.itemsToUpdate.forEach(item=>{
@@ -113,7 +143,8 @@ export class ItemUtilities {
             borealFASTMTv2FromClone,
             borealFastSideArmor,
             borealFastMandible,
-            borealOspreyProtectionFromClone
+            borealOspreyProtectionFromClone,
+            borealCOMM3FromCloneDetails
         ];
 
         let ctr = 0;
