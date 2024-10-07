@@ -14,9 +14,9 @@ const borealCOMM3Props: Props = {
         path: "backpack/boreal_comm3.bundle",
         rcid: ""
     },
-    weaponErgonomicPenalty: -3,
-    Weight: 10,
-    speedPenaltyPercent: -4
+    weaponErgonomicPenalty: -5,
+    Weight: 4.75,
+    speedPenaltyPercent: -5
 }
 
 export const borealCOMM3FromCloneDetails: NewItemFromCloneDetails = {
@@ -31,7 +31,7 @@ export const borealCOMM3FromCloneDetails: NewItemFromCloneDetails = {
         en: {
             name: "Boreal Marauder Frostbite Tactical COMM 3 Frame System",
             shortName: "Frostbite's Frame",
-            description: "The Frostbite Frame system is specially designed for extreme cold weather operations, equipped with the 'Whiteout' backpack for carrying essential survival and communication gear. The main compartment is optimized for survival radios like the PRC117F or G, PRC119F, 152, or ASIP. The modular system allows for additional gear attachments, making it versatile for long winter expeditions. A highly sought-after item in the brutal Boreal Marauders' wilderness."
+            description: "The Frostbite Frame system is specially designed for extreme cold weather operations, equipped with the 'Whiteout' backpack for carrying essential survival and communication gear. The main compartment is optimized for survival radios like the PRC117F or G, PRC119F, 152, or ASIP. The modular system allows for additional gear attachments, making it versatile for long winter expeditions. A highly sought-after item in the brutal Boreal Marauders' wilderness for it's light weight materials and massive storage capability."
         }
     }
 }
@@ -40,6 +40,6 @@ export const borealCOMM3SlotSize: SlotSize = {
     name: borealCOMM3FromCloneDetails.locales.en.name,
     itemId: CustomItemMap.BOREAL_COMM3,
     horizontal: 6,
-    vertical: 8,
+    vertical: 10,
     removeFilters: false
 }

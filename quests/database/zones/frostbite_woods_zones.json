@@ -1,0 +1,127 @@
+[
+  {
+    "ZoneId": "6701b5d301275715219eebae",
+    "ZoneName": "Frostbite_militarymap_supplies_2",
+    "ZoneLocation": "Woods",
+    "ZoneType": "placeitem",
+    "FlareType": "",
+    "Position": {
+      "X": "-194.1013",
+      "Y": "-1.370478",
+      "Z": "219.4094",
+      "W": "0"
+    },
+    "Rotation": {
+      "X": "0",
+      "Y": "0.3420202",
+      "Z": "0",
+      "W": "0.9396926"
+    },
+    "Scale": {
+      "X": "1.5",
+      "Y": "1",
+      "Z": "1",
+      "W": "0"
+    }
+  },
+  {
+    "ZoneId": "6701b5d1b824a18d52eea187",
+    "ZoneName": "Frostbite_militarycamp_supplies_1",
+    "ZoneLocation": "Woods",
+    "ZoneType": "placeitem",
+    "FlareType": "",
+    "Position": {
+      "X": "-191.0414",
+      "Y": "-1.620477",
+      "Z": "210.3399",
+      "W": "0"
+    },
+    "Rotation": {
+      "X": "0",
+      "Y": "0",
+      "Z": "0",
+      "W": "1"
+    },
+    "Scale": {
+      "X": "1",
+      "Y": "1",
+      "Z": "1",
+      "W": "0"
+    }
+  },
+  {
+    "ZoneId": "6701b5cf60f117efd948886b",
+    "ZoneName": "military_camp_killzone",
+    "ZoneLocation": "Woods",
+    "ZoneType": "botkillzone",
+    "FlareType": "",
+    "Position": {
+      "X": "-184.4543",
+      "Y": "9.183502",
+      "Z": "225.4258",
+      "W": "0"
+    },
+    "Rotation": {
+      "X": "0",
+      "Y": "0",
+      "Z": "0",
+      "W": "1"
+    },
+    "Scale": {
+      "X": "111",
+      "Y": "31",
+      "Z": "141",
+      "W": "0"
+    }
+  },
+  {
+    "ZoneId": "6701b5ccd89c6bc9947b6466",
+    "ZoneName": "Frostbite_bunker",
+    "ZoneLocation": "Woods",
+    "ZoneType": "visit",
+    "FlareType": "",
+    "Position": {
+      "X": "-170.6143",
+      "Y": "45.91734",
+      "Z": "-237.4387",
+      "W": "0"
+    },
+    "Rotation": {
+      "X": "0",
+      "Y": "0",
+      "Z": "0",
+      "W": "1"
+    },
+    "Scale": {
+      "X": "1",
+      "Y": "1",
+      "Z": "1",
+      "W": "0"
+    }
+  },
+  {
+    "ZoneId": "6701b5c9de855646d433a31f",
+    "ZoneName": "Frostbite_surveilancepoint_1",
+    "ZoneLocation": "Woods",
+    "ZoneType": "visit",
+    "FlareType": "",
+    "Position": {
+      "X": "-125.9591",
+      "Y": "59.30479",
+      "Z": "-204.2822",
+      "W": "0"
+    },
+    "Rotation": {
+      "X": "0.00430503",
+      "Y": "0.1628939",
+      "Z": "-0.0007107633",
+      "W": "0.986634"
+    },
+    "Scale": {
+      "X": "13.25",
+      "Y": "6.5",
+      "Z": "9.75",
+      "W": "0"
+    }
+  }
+]
