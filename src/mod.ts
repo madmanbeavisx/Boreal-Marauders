@@ -14,7 +14,7 @@ import { Traders } from "@spt/models/enums/Traders";
 
 class Mod implements IPreSptLoadMod, IPostDBLoadMod {
     public modName: string = "Boreal Marauders";
-    public version: string = "0.5.0";
+    public version: string = "0.7.0";
     public oldVersionDirectory: string = "madmanbeavis-wintersdeathgear"
     private debug: boolean = false;
 
@@ -84,17 +84,16 @@ class Mod implements IPreSptLoadMod, IPostDBLoadMod {
         this.ref.customLogger("**** Developers:           MadManBeavis *****");
         this.ref.customLogger("**** Be gentile it's my first time ;) *******");
         this.ref.customLogger("*********************************************");
-        this.ref.customLogger("*********************************************");
 
-        this.ref.customLogger("**** Let's finally give a welcome to: *******");
-        this.ref.customLogger("**************************************************************************");
-        this.ref.customLogger("* ███████╗██████╗  ██████╗ ███████╗████████╗██████╗ ██╗████████╗███████╗ *");
-        this.ref.customLogger("* ██╔════╝██╔══██╗██╔═══██╗██╔════╝╚══██╔══╝██╔══██╗██║╚══██╔══╝██╔════╝ *");
-        this.ref.customLogger("* █████╗  ██████╔╝██║   ██║███████╗   ██║   ██████╔╝██║   ██║   █████╗   *");
-        this.ref.customLogger("* ██╔══╝  ██╔══██╗██║   ██║╚════██║   ██║   ██╔══██╗██║   ██║   ██╔══╝   *");
-        this.ref.customLogger("* ██║     ██║  ██║╚██████╔╝███████║   ██║   ██████╔╝██║   ██║   ███████╗ *");
-        this.ref.customLogger("* ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚══════╝   ╚═╝   ╚═════╝ ╚═╝   ╚═╝   ╚══════╝ *");                                                           
-        this.ref.customLogger("**************************************************************************");
+        // this.ref.customLogger("**** Let's finally give a welcome to: *******");
+        // this.ref.customLogger("**************************************************************************");
+        // this.ref.customLogger("* ███████╗██████╗  ██████╗ ███████╗████████╗██████╗ ██╗████████╗███████╗ *");
+        // this.ref.customLogger("* ██╔════╝██╔══██╗██╔═══██╗██╔════╝╚══██╔══╝██╔══██╗██║╚══██╔══╝██╔════╝ *");
+        // this.ref.customLogger("* █████╗  ██████╔╝██║   ██║███████╗   ██║   ██████╔╝██║   ██║   █████╗   *");
+        // this.ref.customLogger("* ██╔══╝  ██╔══██╗██║   ██║╚════██║   ██║   ██╔══██╗██║   ██║   ██╔══╝   *");
+        // this.ref.customLogger("* ██║     ██║  ██║╚██████╔╝███████║   ██║   ██████╔╝██║   ██║   ███████╗ *");
+        // this.ref.customLogger("* ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚══════╝   ╚═╝   ╚═════╝ ╚═╝   ╚═╝   ╚══════╝ *");                                                           
+        // this.ref.customLogger("**************************************************************************");
     } 
 
     private displayDoneMessage() {

@@ -15,6 +15,10 @@ import { CustomItemMap } from "../resources/CustomItemMap";
 import { Preset } from "./utilities";
 import { borealCOMM3FromCloneDetails, borealCOMM3SlotSize } from "../Items/backpacks/BorealCOMM3";
 import { SlotSize } from "../resources/configConsts";
+import { borealRedutT5FromClone, borealRedutT5Preset } from "../Items/armor/BorealRedutT5";
+import { borealD3CRXFromClone } from "../Items/rigs/BorealD3CRX";
+import { borealFASTMTv3FromClone, borealFASTMTV3Preset } from "../Items/helmets/BorealFastMTv3";
+import { deathWalkerItemToClone } from "../Items/facemasks/DeathWalkerMask";
 
 export interface IITemsToUpdateFilters {
     itemIdToFixFiltersOn: string;
@@ -60,6 +64,11 @@ export class ItemUtilities {
         },
         {
             itemIdToFixFiltersOn: CustomItemMap.BOREAL_FAST_HELMET,
+            filterIdToSearchFor: ItemMap.ARMOREDEQUIPMENT_FAST_EARS,
+            filterIdToAdd: CustomItemMap.BOREAL_FAST_SIDE_ARMOR
+        },
+        {
+            itemIdToFixFiltersOn: CustomItemMap.BOREAL_FAST_MT_V3,
             filterIdToSearchFor: ItemMap.ARMOREDEQUIPMENT_FAST_EARS,
             filterIdToAdd: CustomItemMap.BOREAL_FAST_SIDE_ARMOR
         },
@@ -125,7 +134,9 @@ export class ItemUtilities {
         const itemPresets = this.database.globals.ItemPresets;
         const newPresets: Preset[] = [
             winterFASTMTV2Preset,
-            borealOspreyProtectionPreset
+            borealOspreyProtectionPreset,
+            borealRedutT5Preset,
+            borealFASTMTV3Preset
         ]
 
         let ctr = 0;
@@ -144,7 +155,11 @@ export class ItemUtilities {
             borealFastSideArmor,
             borealFastMandible,
             borealOspreyProtectionFromClone,
-            borealCOMM3FromCloneDetails
+            borealCOMM3FromCloneDetails,
+            borealRedutT5FromClone,
+            borealD3CRXFromClone,
+            borealFASTMTv3FromClone,
+            deathWalkerItemToClone
         ];
 
         let ctr = 0;

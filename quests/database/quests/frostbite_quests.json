@@ -1,3 +1,103 @@
 ﻿{
-  "6701e93cd3b08171bc31d803"
+  "67028d1100745549174c0c9e": {
+    "QuestName": "Rumors_In_The_Woods",
+    "_id": "67028d1100745549174c0c9e",
+    "acceptPlayerMessage": "Rumors_In_The_Woods acceptPlayerMessage",
+    "canShowNotificationsInGame": true,
+    "changeQuestMessageText": "Rumors_In_The_Woods changeQuestMessageText",
+    "completePlayerMessage": "Rumors_In_The_Woods completePlayerMessage",
+    "conditions": {
+      "AvailableForFinish":[
+        {
+          "completeInSeconds": 0,
+          "conditionType": "HandoverItem",
+          "dogtagLevel": 0,
+          "dynamicLocale":false,
+          "globalQeustCounterId": "",
+          "id": "Rumors_In_The_Woods condition1",
+          "index": 0,
+          "isEncoded":false,
+          "maxDurabillity": 0,
+          "minDurability": 0,
+          "onlyFoundInRaid": false,
+          "parentId": "",
+          "target":[
+            "5900b89686f7744e704a8747"
+          ],
+          "value": 1,
+          "visibilityConditions":[]
+        }
+      ] 
+    }
+  },
+  "6701e93cd3b08171bc31d803": {
+    "QuestName": "mysterious_reports",
+    "_id": "6701e93cd3b08171bc31d803",
+    "acceptPlayerMessage": "mysterious_reports acceptPlayerMessage",
+    "canShowNotificationsInGame": true,
+    "changeQuestMessageText": "mysterious_reports changeQuestMessageText",
+    "completePlayerMessage": "mysterious_reports completePlayerMessage",
+    "conditions": {
+      "AvailableForFinish": [
+        {
+          "conditionType": "CounterCreator",
+          "dogtagLevel": 0,
+          "dynamicLocale": false,
+          "globalQuestCounterId": "",
+          "id": "mysterious_reports condition1",
+          "index": 0,
+          "isEncoded": false,
+          "maxDurability": 0,
+          "minDurability": 0,
+          "onlyFoundInRaid": false,
+          "parentId": "",
+          "target": [],
+          "value": 1,
+          "visibilityConditions": []
+        }
+      ],
+      "AvailableForStart": [
+        {
+          "compareMethod": ">=",
+          "conditionType": "Level",
+          "dynamicLocale": false,
+          "globalQuestCounterId": "",
+          "id": "67027902d0cfbfdfbc4c6833",
+          "index": 0,
+          "parentId": "",
+          "value": 5,
+          "visibilityConditions": []
+        }
+      ],
+      "Fail": []
+    },
+    "declinePlayerMessage": "mysterious_reports declinePlayerMessage",
+    "description": "mysterious_reports description",
+    "failMessageText": "mysterious_reports failMessageText",
+    "image": "/files/quest/icon/mysterious_reports.png",
+    "instantComplete": false,
+    "isKey": false,
+    "location": "56f40101d2720b2a4d8b45d6",
+    "name": "mysterious_reports name",
+    "note": "mysterious_reports note",
+    "restartable": false,
+    "rewards": {
+      "Fail": [],
+      "Started": [],
+      "Success": [
+        {
+          "id": "66c0f89090d5441593dc507b",
+          "index": 0,
+          "type": "Experience",
+          "value": "8000"
+        }
+      ]
+    },
+    "secretQuest": false,
+    "side": "Pmc",
+    "startedMessageText": "mysterious_reports startedMessageText",
+    "successMessageText": "mysterious_reports successMessageText",
+    "traderId": "Viper",
+    "type": "Completion"
+  }
 }

@@ -1,6 +1,6 @@
 {
     "name": "boreal-muruaders",
-    "version": "0.5.0",
+    "version": "0.7.0",
     "sptVersion": "~3.9",
     "loadBefore": [
         "madmanbeavis-wintersdeathgear",

@@ -1,6 +1,14 @@
 {
     "manifest": [
         {
+            "key": "armor/boreal_redut_t5.bundle",
+            "dependencyKeys": [
+                "shaders",
+                "cubemaps",
+                "assets/commonassets/physics/physicsmaterials.bundle"
+            ]
+        },
+        {
             "key": "backpack/boreal_comm3.bundle",
             "dependencyKeys": [
                 "shaders",
@@ -9,7 +17,23 @@
             ]
         },
         {
+            "key": "facemasks/boreal_deathwalkermask.bundle",
+            "dependencyKeys": [
+                "shaders",
+                "cubemaps",
+                "assets/commonassets/physics/physicsmaterials.bundle"
+            ]
+        },
+        {
             "key": "facemasks/whitoutdeathsquadmask.bundle",
+            "dependencyKeys": [
+                "shaders",
+                "cubemaps",
+                "assets/commonassets/physics/physicsmaterials.bundle"
+            ]
+        },
+        {
+            "key": "helmets/boreal_helmet_v3.bundle",
             "dependencyKeys": [
                 "shaders",
                 "cubemaps",
@@ -34,6 +58,14 @@
         },
         {
             "key": "helmets/attachments/troopersidearmor.bundle",
+            "dependencyKeys": [
+                "shaders",
+                "cubemaps",
+                "assets/commonassets/physics/physicsmaterials.bundle"
+            ]
+        },
+        {
+            "key": "rigs/boreal_d3crx.bundle",
             "dependencyKeys": [
                 "shaders",
                 "cubemaps",
