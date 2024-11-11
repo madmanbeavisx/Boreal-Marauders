@@ -17,7 +17,47 @@
             ]
         },
         {
+            "key": "backpack/boreal_takedown.bundle",
+            "dependencyKeys": [
+                "shaders",
+                "cubemaps",
+                "assets/commonassets/physics/physicsmaterials.bundle"
+            ]
+        },
+        {
+            "key": "clothing/pants/boreal_pants.bundle",
+            "dependencyKeys": [
+                "shaders",
+                "cubemaps",
+                "assets/commonassets/physics/physicsmaterials.bundle"
+            ]
+        },
+        {
+            "key": "clothing/parka/boreal_parka.bundle",
+            "dependencyKeys": [
+                "shaders",
+                "cubemaps",
+                "assets/commonassets/physics/physicsmaterials.bundle"
+            ]
+        },
+        {
+            "key": "clothing/parka/hand_boreal_parka.bundle",
+            "dependencyKeys": [
+                "shaders",
+                "cubemaps",
+                "assets/commonassets/physics/physicsmaterials.bundle"
+            ]
+        },
+        {
             "key": "facemasks/boreal_deathwalkermask.bundle",
+            "dependencyKeys": [
+                "shaders",
+                "cubemaps",
+                "assets/commonassets/physics/physicsmaterials.bundle"
+            ]
+        },
+        {
+            "key": "facemasks/death_shadow_mask_v4.bundle",
             "dependencyKeys": [
                 "shaders",
                 "cubemaps",
@@ -33,7 +73,7 @@
             ]
         },
         {
-            "key": "helmets/boreal_helmet_v3.bundle",
+            "key": "helmets/boreal_fastmt.bundle",
             "dependencyKeys": [
                 "shaders",
                 "cubemaps",
@@ -74,6 +114,14 @@
         },
         {
             "key": "rigs/boreal_trooper_osprey_plate_carrier.bundle",
+            "dependencyKeys": [
+                "shaders",
+                "cubemaps",
+                "assets/commonassets/physics/physicsmaterials.bundle"
+            ]
+        },
+        {
+            "key": "staticitems/serpent_trinket.bundle",
             "dependencyKeys": [
                 "shaders",
                 "cubemaps",

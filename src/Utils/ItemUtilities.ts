@@ -19,6 +19,17 @@ import { borealRedutT5FromClone, borealRedutT5Preset } from "../Items/armor/Bore
 import { borealD3CRXFromClone } from "../Items/rigs/BorealD3CRX";
 import { borealFASTMTv3FromClone, borealFASTMTV3Preset } from "../Items/helmets/BorealFastMTv3";
 import { deathWalkerItemToClone } from "../Items/facemasks/DeathWalkerMask";
+import { borealTakedownFromCloneDetails, borealTakedownSlotSize } from "../Items/backpacks/BorealTakedown";
+import { snakeHeadCharmFromClone } from "../Items/staticItems/SnakeHeadCharm";
+import { deathShadowItemToClone } from "../Items/facemasks/DeathShadowMask";
+import { ICustomizationItem } from "@spt/models/eft/common/tables/ICustomizationItem";
+import { borealParkaHandsCustomizationItem, borealParkaRagmanSuit, borealParkaSuitCustomizationItem, borealParkaTopCustomizationItem } from "../Items/clothing/BorealParka";
+import { TraderMap } from "../resources/TraderMap";
+import { ISuit } from "@spt/models/eft/common/tables/ITrader";
+import { borealPantsBottomCustomizationItem, borealPantsRagmanSuit, borealPantsSuitCustomizationItem } from "../Items/clothing/BorealPants";
+import { References } from "../resources/References";
+import { CurrencyMap } from "../resources/CurrencyMap";
+import { JsonUtil } from "@spt/utils/JsonUtil";
 
 export interface IITemsToUpdateFilters {
     itemIdToFixFiltersOn: string;
@@ -32,17 +43,22 @@ export class ItemUtilities {
     private logger: ILogger;
     private databaseServer: DatabaseServer;
     private customItemService: CustomItemService;
+    private ref:References;
+    private jsonUtil: JsonUtil
 
-    constructor(container: DependencyContainer){
+    constructor(container: DependencyContainer, ref: References){
         this.container = container
         this.databaseServer = container.resolve<DatabaseServer>("DatabaseServer");
         this.database = this.databaseServer.getTables();
         this.logger = container.resolve<ILogger>("WinstonLogger");
+        this.jsonUtil = container.resolve<JsonUtil>("JsonUtil");
         this.customItemService = container.resolve<CustomItemService>("CustomItemService");
+        this.ref = ref
     }
 
     private backpacksToUpdate: SlotSize[] = [
         borealCOMM3SlotSize
+        //borealTakedownSlotSize
     ]
 
     private itemsToUpdate: IITemsToUpdateFilters[] = [
@@ -68,7 +84,7 @@ export class ItemUtilities {
             filterIdToAdd: CustomItemMap.BOREAL_FAST_SIDE_ARMOR
         },
         {
-            itemIdToFixFiltersOn: CustomItemMap.BOREAL_FAST_MT_V3,
+            itemIdToFixFiltersOn: CustomItemMap.BOREAL_FAST_MT_FINAL,
             filterIdToSearchFor: ItemMap.ARMOREDEQUIPMENT_FAST_EARS,
             filterIdToAdd: CustomItemMap.BOREAL_FAST_SIDE_ARMOR
         },
@@ -159,7 +175,10 @@ export class ItemUtilities {
             borealRedutT5FromClone,
             borealD3CRXFromClone,
             borealFASTMTv3FromClone,
-            deathWalkerItemToClone
+            deathWalkerItemToClone,
+            borealTakedownFromCloneDetails,
+            snakeHeadCharmFromClone,
+            deathShadowItemToClone
         ];
 
         let ctr = 0;
@@ -168,12 +187,69 @@ export class ItemUtilities {
             ctr++;
             numberOfNewITems++;
         }
-
         this.logger.log(`[${mod.modName}] Added ${numberOfNewITems} new items.`, LogTextColor.CYAN)
     }
     
     public refreshDatabase(): void {
         this.database = this.databaseServer.getTables();
+    }
+
+    private addClothingToRagman(item: ISuit){
+        const ragmanDb = this.database.traders[TraderMap.RAGMAN];
+        ragmanDb.suits = ragmanDb.suits.concat(item);
+    }
+
+    private addClothingItemToLocales(item: ICustomizationItem): void {
+        const localeDb = Object.values(this.database.locales.global) as Record<string,string>[];
+        for (const locale of localeDb) {
+            locale[`${item._id} Name`] = item._props.Name;
+            locale[`${item._id}} ShortName`] = item._props.ShortName;
+            locale[`${item._id}} Description`] = item._props.Description;
+        }
+    }
+
+    private addClothingItemToDb(item: ICustomizationItem): void {
+        const customizationItemsDb = this.database.templates.customization;
+        customizationItemsDb[item._id] = item as ICustomizationItem;
+
+        this.addClothingItemToLocales(item);
+    }
+
+    public addCustomClothing(): void {
+        let numberOfNewClothingItems: number = 0;
+        let numberOfNewClothingItemsAddedToRagman: number = 0;
+        // Items have to be listed in order
+        // Top / Bottom
+        // Hands / Feet
+        // Suit
+        const clothingToAdd: ICustomizationItem[] = [
+            borealParkaTopCustomizationItem,
+            borealParkaHandsCustomizationItem,
+            borealParkaSuitCustomizationItem,
+            borealPantsBottomCustomizationItem,
+            borealPantsSuitCustomizationItem
+        ];
+
+        const clothingRagmanSuitsToAdd: ISuit[] = [
+            borealParkaRagmanSuit,
+            borealPantsRagmanSuit
+        ]
+        let ctr = 0;
+        // Add Tops/Bottoms
+        clothingToAdd.forEach(item => {
+            this.addClothingItemToDb(clothingToAdd.at(ctr))
+            ctr++;
+            numberOfNewClothingItems++;
+        });
+
+        clothingRagmanSuitsToAdd.forEach(suitItem => {
+            this.addClothingToRagman(suitItem)
+            numberOfNewClothingItemsAddedToRagman++;
+        })
+
+        this.logger.log(`[${mod.modName}] Added ${numberOfNewClothingItemsAddedToRagman} new clothing items to Ragman.`, LogTextColor.CYAN)
+        // this.logger.log(`[${mod.modName}] Added ${numberOfNewClothingItems} new clothing items.`, LogTextColor.CYAN)
+    
     }
 }
 

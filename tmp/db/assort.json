@@ -23,22 +23,9 @@
             "slotId": "hideout"
         },
         {
-            "_id": "672ed0ae71792350b90e0b38",
-            "_tpl": "672a1c2354d6662af0fc5463",
-            "upd": {
-                "StackObjectsCount": 1,
-                "Repairable": {
-                    "Durability": 40,
-                    "MaxDurability": 40
-                }
-            },
-            "parentId": "hideout",
-            "slotId": "hideout"
-        },
-        {
             "_id": "6704a7acc4435be7c526baef",
             "_tpl": "670497be33c79141d703354c",
-            "upd":{
+            "upd": {
                 "StackObjectsCount": 1,
                 "sptPresetId": "67049a92e0e2ca0e925d263a"
             },
@@ -2175,48 +2162,14 @@
             },
             "parentId": "hideout",
             "slotId": "hideout"
-        },
-        {
-            "_id": "672e7091904ea6ecf8b6e314",
-            "_tpl": "670c9c93bad875b1c3e21b50",
-            "upd": {
-                "StackObjectsCount": 1
-            },
-            "parentId": "hideout",
-            "slotId": "hideout"
-        },
-        {
-            "_id": "672e71585e1cf3fcf5dab0be",
-            "_tpl": "672a1c74950d97c80032bd5c",
-            "upd": {
-                "StackObjectsCount": 1,
-                "sptPresetId": "66eba71c3332de12ba156d20"
-            },
-            "parentId": "hideout",
-            "slotId": "hideout"
-        },
-        {
-            "_id": "672e7162e6d51955d7020b2a",
-            "_tpl": "657f8ec5f4c82973640b234c",
-            "parentId": "672e71585e1cf3fcf5dab0be",
-            "slotId": "Helmet_top",
-            "upd": {}
-        },
-        {
-            "_id": "672e71617022b0da9b7c1232",
-            "_tpl": "657f8f10f4c82973640b2350",
-            "parentId": "672e71585e1cf3fcf5dab0be",
-            "slotId": "Helmet_back",
-            "upd": {}
         }
     ],
     "barter_scheme": {
-        
         "6709264b4d1571422dbf3f2e": [
             [
                 {
                     "_tpl": "5449016a4bdc2d6f028b456f",
-                    "count": 140000
+                    "count": 100000
                 }
             ]
         ],
@@ -4091,37 +4044,10 @@
                     "count": 300000
                 }
             ]
-        ],
-        "672e7091904ea6ecf8b6e314": [
-            [
-                {
-                    "_tpl": "5449016a4bdc2d6f028b456f",
-                    "count": 300000
-                }
-            ]
-        ],
-        "672ed0ae71792350b90e0b38": [
-            [
-                {
-                    "_tpl": "5449016a4bdc2d6f028b456f",
-                    "count": 140000
-                }
-            ]
-        ],
-        "672e71585e1cf3fcf5dab0be": [
-            [
-                {
-                    "_tpl": "5449016a4bdc2d6f028b456f",
-                    "count": 130000
-                }
-            ]
         ]
     },
     "loyal_level_items": {
-        "672ed0ae71792350b90e0b38": 3,
-        "672e71585e1cf3fcf5dab0be": 3,
-        "672e7091904ea6ecf8b6e314": 3,
-        "6709264b4d1571422dbf3f2e": 3,
+        "6709264b4d1571422dbf3f2e": 2,
         "6707800828a52fc92acc03b4": 2,
         "6704a7acc4435be7c526baef": 3,
         "5c4d82be90ca465d4a110453": 3,

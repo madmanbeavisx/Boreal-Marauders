@@ -1,10 +1,9 @@
-import { Props } from "@spt/models/eft/common/tables/ITemplateItem";
-import { NewItemFromCloneDetails } from "@spt/models/spt/mod/NewItemDetails";
-import { ItemMap } from "../../resources/ItemMap";
-import { CustomItemMap } from "../../resources/CustomItemMap";
-import { Preset } from "../../Utils/utilities";
-
-const borealRedutT5Props: Props = {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.borealRedutT5Preset = exports.borealRedutT5FromClone = void 0;
+const ItemMap_1 = require("../../resources/ItemMap");
+const CustomItemMap_1 = require("../../resources/CustomItemMap");
+const borealRedutT5Props = {
     Name: "boreal_redut_t5",
     ShortName: "boreal_redut_t5",
     Description: "boreal_redut_t5",
@@ -20,14 +19,13 @@ const borealRedutT5Props: Props = {
     RagFairCommissionModifier: 1,
     CanSellOnRagfair: true,
     CanRequireOnRagfair: true
-}
-
-export const borealRedutT5FromClone: NewItemFromCloneDetails = {
+};
+exports.borealRedutT5FromClone = {
     fleaPriceRoubles: 470000,
-    itemTplToClone: ItemMap.ARMOR_REDUTT5,
+    itemTplToClone: ItemMap_1.ItemMap.ARMOR_REDUTT5,
     overrideProperties: borealRedutT5Props,
     parentId: "5448e54d4bdc2dcc718b4568",
-    newId: CustomItemMap.BOREAL_REDUT_T5,
+    newId: CustomItemMap_1.CustomItemMap.BOREAL_REDUT_T5,
     handbookPriceRoubles: 7343,
     handbookParentId: "5b5f701386f774093f2ecf0f",
     locales: {
@@ -37,16 +35,15 @@ export const borealRedutT5FromClone: NewItemFromCloneDetails = {
             description: "The Boreal \"Redut T5\" armor vest is a reinforced version of the Redut armor series, designed with input from specialized units operating in harsh arctic conditions. The Boreal version features advanced cold-weather camouflage and insulation, ideal for combat operations in snow-covered environments. Designed for durability and protection."
         }
     }
-}
-
-export const borealRedutT5Preset: Preset = {
+};
+exports.borealRedutT5Preset = {
     _changeWeaponName: false,
-    _encyclopedia: CustomItemMap.BOREAL_REDUT_T5,
+    _encyclopedia: CustomItemMap_1.CustomItemMap.BOREAL_REDUT_T5,
     _id: "67049a92e0e2ca0e925d263a",
     _items: [
         {
             _id: "67049aad556b2fe12df324f4",
-            _tpl: CustomItemMap.BOREAL_REDUT_T5
+            _tpl: CustomItemMap_1.CustomItemMap.BOREAL_REDUT_T5
         },
         {
             _id: "67049b2b3bf9fa33fb482fad",
@@ -130,4 +127,4 @@ export const borealRedutT5Preset: Preset = {
     _name: "Boreal Redut-T5 body armor",
     _parent: "67049aad556b2fe12df324f4",
     _type: "Preset"
-}
+};

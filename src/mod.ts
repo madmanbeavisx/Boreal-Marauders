@@ -14,7 +14,7 @@ import { Traders } from "@spt/models/enums/Traders";
 
 class Mod implements IPreSptLoadMod, IPostDBLoadMod {
     public modName: string = "Boreal Marauders";
-    public version: string = "0.7.0";
+    public version: string = "1.0.0";
     public oldVersionDirectory: string = "madmanbeavis-wintersdeathgear"
     private debug: boolean = false;
 
@@ -48,7 +48,7 @@ class Mod implements IPreSptLoadMod, IPostDBLoadMod {
     public postDBLoad(container: DependencyContainer): void {
         this.ref.postDBLoad(container);
 
-        this.ref.itemUtilities = new ItemUtilities(container);
+        this.ref.itemUtilities = new ItemUtilities(container, this.ref);
         // Let's add out items that we are cloning to the database.
         this.ref.itemUtilities.addCustomItems();
         
@@ -59,6 +59,10 @@ class Mod implements IPreSptLoadMod, IPostDBLoadMod {
         this.ref.itemUtilities.refreshDatabase();
         this.ref.itemUtilities.doEditsToItemFilters(); 
         this.ref.itemUtilities.doCustomBackpackStashResize();
+
+        this.ref.customDebugLogger("Staring adding Custom Clothing.")
+        this.ref.itemUtilities.addCustomClothing();
+        this.ref.customDebugLogger("Done adding Custom Clothing.")
 
         this.ref.customDebugLogger("Finished adding Items")
 
@@ -80,20 +84,8 @@ class Mod implements IPreSptLoadMod, IPostDBLoadMod {
     private displayCredits() {
         this.ref.customLogger("*********************************************");
         this.ref.customLogger(`***** ${this.modName} - ${this.version} **************`);
-        this.ref.customLogger("**** My first mod to bring to you guys. *****");
         this.ref.customLogger("**** Developers:           MadManBeavis *****");
-        this.ref.customLogger("**** Be gentile it's my first time ;) *******");
         this.ref.customLogger("*********************************************");
-
-        // this.ref.customLogger("**** Let's finally give a welcome to: *******");
-        // this.ref.customLogger("**************************************************************************");
-        // this.ref.customLogger("* ███████╗██████╗  ██████╗ ███████╗████████╗██████╗ ██╗████████╗███████╗ *");
-        // this.ref.customLogger("* ██╔════╝██╔══██╗██╔═══██╗██╔════╝╚══██╔══╝██╔══██╗██║╚══██╔══╝██╔════╝ *");
-        // this.ref.customLogger("* █████╗  ██████╔╝██║   ██║███████╗   ██║   ██████╔╝██║   ██║   █████╗   *");
-        // this.ref.customLogger("* ██╔══╝  ██╔══██╗██║   ██║╚════██║   ██║   ██╔══██╗██║   ██║   ██╔══╝   *");
-        // this.ref.customLogger("* ██║     ██║  ██║╚██████╔╝███████║   ██║   ██████╔╝██║   ██║   ███████╗ *");
-        // this.ref.customLogger("* ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚══════╝   ╚═╝   ╚═════╝ ╚═╝   ╚═╝   ╚══════╝ *");                                                           
-        // this.ref.customLogger("**************************************************************************");
     } 
 
     private displayDoneMessage() {
