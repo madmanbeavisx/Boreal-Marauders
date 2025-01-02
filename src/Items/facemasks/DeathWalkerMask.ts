@@ -1,8 +1,8 @@
-import { Props } from "@spt/models/eft/common/tables/ITemplateItem";
+import { IProps } from "@spt/models/eft/common/tables/ITemplateItem";
 import { NewItemFromCloneDetails } from "@spt/models/spt/mod/NewItemDetails";
 import { CustomItemMap } from "../../resources/CustomItemMap";
 
-const deathWalkerProps: Props = {
+const deathWalkerProps: IProps = {
     Name: "death_walker_mask",
     ShortName: "death_walker_mask",
     Description: "death_walker_mask",

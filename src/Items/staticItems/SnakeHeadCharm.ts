@@ -1,7 +1,7 @@
-import { Props } from "@spt/models/eft/common/tables/ITemplateItem";
+import { IProps } from "@spt/models/eft/common/tables/ITemplateItem";
 import { NewItemFromCloneDetails } from "@spt/models/spt/mod/NewItemDetails";
 
-const snakeHeadCharmProps : Props = {
+const snakeHeadCharmProps : IProps = {
     Prefab: {
         path: "staticitems/serpent_trinket.bundle",
         rcid: ""

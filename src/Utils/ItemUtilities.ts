@@ -30,6 +30,7 @@ import { borealPantsBottomCustomizationItem, borealPantsRagmanSuit, borealPantsS
 import { References } from "../resources/References";
 import { CurrencyMap } from "../resources/CurrencyMap";
 import { JsonUtil } from "@spt/utils/JsonUtil";
+import { borealRT61FatmanFrostbiteFromClone } from "../Items/armor/R61Fatman";
 
 export interface IITemsToUpdateFilters {
     itemIdToFixFiltersOn: string;
@@ -178,7 +179,8 @@ export class ItemUtilities {
             deathWalkerItemToClone,
             borealTakedownFromCloneDetails,
             snakeHeadCharmFromClone,
-            deathShadowItemToClone
+            deathShadowItemToClone,
+            borealRT61FatmanFrostbiteFromClone
         ];
 
         let ctr = 0;
@@ -231,7 +233,7 @@ export class ItemUtilities {
         ];
 
         const clothingRagmanSuitsToAdd: ISuit[] = [
-            borealParkaRagmanSuit,
+            //borealParkaRagmanSuit,
             borealPantsRagmanSuit
         ]
         let ctr = 0;

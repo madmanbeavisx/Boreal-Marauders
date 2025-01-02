@@ -1,10 +1,10 @@
-import { Props } from "@spt/models/eft/common/tables/ITemplateItem";
+import { IProps } from "@spt/models/eft/common/tables/ITemplateItem";
 import {NewItemFromCloneDetails} from "@spt/models/spt/mod/NewItemDetails";
 import { Preset } from "../../Utils/utilities";
 import { BaseClasses } from "@spt/models/enums/BaseClasses";
 import { ItemMap } from "../../resources/ItemMap";
 
-const winterFASTMTv2PropsToOverride: Props = {
+const winterFASTMTv2PropsToOverride: IProps = {
     Prefab: {
         path: "helmets/wintertrooperdayhelm.bundle",
         rcid: ""

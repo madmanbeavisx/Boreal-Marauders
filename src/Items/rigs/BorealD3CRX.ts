@@ -1,8 +1,8 @@
-import { Props } from "@spt/models/eft/common/tables/ITemplateItem";
+import { IProps } from "@spt/models/eft/common/tables/ITemplateItem";
 import { NewItemFromCloneDetails } from "@spt/models/spt/mod/NewItemDetails";
 import { CustomItemMap } from "../../resources/CustomItemMap";
 
-const borealD3CRXProps: Props = {
+const borealD3CRXProps: IProps = {
     Prefab: {
         path: "rigs/boreal_d3crx.bundle",
         rcid: ""

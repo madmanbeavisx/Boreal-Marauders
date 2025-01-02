@@ -1,11 +1,11 @@
-import { Props } from "@spt/models/eft/common/tables/ITemplateItem";
+import { IProps } from "@spt/models/eft/common/tables/ITemplateItem";
 import {NewItemFromCloneDetails} from "@spt/models/spt/mod/NewItemDetails";
 import { Preset } from "../../Utils/utilities";
 import { BaseClasses } from "@spt/models/enums/BaseClasses";
 import { ItemMap } from "../../resources/ItemMap";
 import { CustomItemMap } from "../../resources/CustomItemMap";
 
-const borealFASTMTv3PropsToOverride: Props = {
+const borealFASTMTv3PropsToOverride: IProps = {
     Prefab: {
         path: "helmets/boreal_fastmt.bundle",
         rcid: ""

@@ -1,12 +1,12 @@
 import { BaseClasses } from "@spt/models/enums/BaseClasses";
 import { NewItemFromCloneDetails } from "@spt/models/spt/mod/NewItemDetails";
 import { ItemMap } from "../../resources/ItemMap";
-import { Props } from "@spt/models/eft/common/tables/ITemplateItem";
+import { IProps } from "@spt/models/eft/common/tables/ITemplateItem";
 import { Preset } from "../../Utils/utilities";
 import { CustomItemMap } from "../../resources/CustomItemMap";
 
 
-const borealOspreyProtectionProps: Props ={
+const borealOspreyProtectionProps: IProps ={
     Prefab: {
         path: "rigs/boreal_trooper_osprey_plate_carrier.bundle",
         rcid: ""

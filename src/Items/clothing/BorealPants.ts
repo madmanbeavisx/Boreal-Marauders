@@ -1,4 +1,4 @@
-import { ICustomizationItem, Props } from "@spt/models/eft/common/tables/ICustomizationItem";
+import { ICustomizationItem, IProps } from "@spt/models/eft/common/tables/ICustomizationItem";
 import { CustomItemMap } from "../../resources/CustomItemMap";
 import { Ixyz } from "@spt/models/eft/common/Ixyz";
 import { ISuit } from "@spt/models/eft/common/tables/ITrader";
@@ -13,7 +13,7 @@ const emptyXYZ: Ixyz = {
     z: 0
 }
 
-const borealPantsSuitProps : Props = {
+const borealPantsSuitProps : IProps = {
     Name: "Boreal_Pants_Suit",
     ShortName: "Boreal_Pants_Suit",
     Description: "Boreal_Pants_Suit",
@@ -27,10 +27,11 @@ const borealPantsSuitProps : Props = {
     IntegratedArmorVest: false,
     WatchPosition: undefined,
     WatchRotation: undefined,
-    AvailableAsDefault: true
+    AvailableAsDefault: true,
+    Game: []
 }
 
-const borealPantsProps: Props = {
+const borealPantsProps: IProps = {
     Name: "Frostbite_Pants",
     ShortName: "Frostbite_Pants",
     Description: "Frostbite_Pants",
@@ -49,7 +50,8 @@ const borealPantsProps: Props = {
     },
     IntegratedArmorVest: false,
     WatchPosition: emptyXYZ,
-    WatchRotation: emptyXYZ
+    WatchRotation: emptyXYZ,
+    Game: []
 }
 
 export const borealPantsSuitCustomizationItem : ICustomizationItem = {
@@ -87,6 +89,11 @@ export const borealPantsRagmanSuit: ISuit = {
                 _tpl: CurrencyMap.ROUBLES,
                 onlyFunctional: true
             }
-        ]
-    }
+        ],
+        achievementRequirements: [],
+        requiredTid: TraderMap.RAGMAN
+    },
+    externalObtain: false,
+    internalObtain: false,
+    isHiddenInPVE: false
 }

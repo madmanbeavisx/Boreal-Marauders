@@ -1,0 +1,36 @@
+[
+    {
+        "type": "top",
+        "suiteId": "6730f9f4e7e28a4639920912",
+        "outfitId": "6731098354bcc7a7281df87c",
+        "topId": "6730fb2deb8293d052ca5bbb",
+        "handsId": "6730fb3bc3bce93c1ec5000e",
+        "locales": {
+            "en": "Frostbite's Parka"
+        },
+        "topBundlePath": "clothing/parka/boreal_parka.bundle",
+		"handsBundlePath": "clothing/parka/hand_boreal_parka.bundle",
+		"traderId": "RAGMAN",
+		"loyaltyLevel": 1,
+		"profileLevel": 1,
+		"standing": 0,
+		"currencyId": "ROUBLES",
+		"price": 1
+    },
+	{
+		"type": "bottom",
+		"suiteId": "673150ad4cd0ec0c9ba8ef1a",
+		"outfitId": "673150c1f6bc9313842e9aa6",
+		"bottomId": "67315099a2ed0616eab9e07e",
+		"locales": {
+			"en": "Frostbite's Combat Pants"
+		},
+		"bottomBundlePath": "clothing/pants/boreal_pants.bundle",
+		"traderId": "RAGMAN",
+		"loyaltyLevel": 1,
+		"profileLevel": 1,
+		"standing": 0,
+		"currencyId": "ROUBLES",
+		"price": 1
+	}
+]

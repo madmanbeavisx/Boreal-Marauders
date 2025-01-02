@@ -1,10 +1,10 @@
-import { Props } from "@spt/models/eft/common/tables/ITemplateItem";
+import { IProps } from "@spt/models/eft/common/tables/ITemplateItem";
 import { NewItemFromCloneDetails } from "@spt/models/spt/mod/NewItemDetails";
 import { ItemMap } from "../../resources/ItemMap";
 import { CustomItemMap } from "../../resources/CustomItemMap";
 import { Preset } from "../../Utils/utilities";
 
-const borealRedutT5Props: Props = {
+const borealRedutT5Props: IProps = {
     Name: "boreal_redut_t5",
     ShortName: "boreal_redut_t5",
     Description: "boreal_redut_t5",

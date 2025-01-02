@@ -67,7 +67,7 @@ const broealTakedownGrid2: Grid = {
     _proto: "55d329c24bdc2d892f8b4567"
 }
 
-const borealTakedownProps: Props = {
+const borealTakedownProps: IProps = {
     Name: "boreal_takedown",
     ShortName: "boreal_takedown",
     Description: "boreal_takedown",

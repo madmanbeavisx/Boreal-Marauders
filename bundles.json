@@ -9,6 +9,14 @@
             ]
         },
         {
+            "key": "armor/heavy_assult_vest_frostbite_camo.bundle",
+            "dependencyKeys": [
+                "shaders",
+                "cubemaps",
+                "assets/commonassets/physics/physicsmaterials.bundle"
+            ]
+        },
+        {
             "key": "backpack/boreal_comm3.bundle",
             "dependencyKeys": [
                 "shaders",

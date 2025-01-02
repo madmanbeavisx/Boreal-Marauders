@@ -1,10 +1,10 @@
-import { Props } from "@spt/models/eft/common/tables/ITemplateItem";
+import { IProps } from "@spt/models/eft/common/tables/ITemplateItem";
 import { NewItemFromCloneDetails } from "@spt/models/spt/mod/NewItemDetails";
 import { CustomItemMap } from "../../resources/CustomItemMap";
 import { ItemMap } from "../../resources/ItemMap";
 import { SlotSize } from "../../resources/configConsts";
 
-const borealCOMM3Props: Props = {
+const borealCOMM3Props: IProps = {
     Name: "boreal_COMM3",
     ShortName: "boreal_COMM3",
     Description: "boreal_COMM3",

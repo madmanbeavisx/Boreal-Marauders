@@ -1,7 +1,7 @@
 import { ITemplateItem, ItemType, Props } from "@spt/models/eft/common/tables/ITemplateItem";
 import { NewItemDetails, NewItemFromCloneDetails } from "@spt/models/spt/mod/NewItemDetails";
 
-const whiteDeathProps: Props = {
+const whiteDeathProps: IProps = {
     Name: "white_death_mask",
     ShortName: "white_death_mask",
     Description: "white_death_mask",

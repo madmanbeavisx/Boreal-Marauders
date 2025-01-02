@@ -1,4 +1,4 @@
-import { ICustomizationItem, Props } from "@spt/models/eft/common/tables/ICustomizationItem";
+import { ICustomizationItem, IProps } from "@spt/models/eft/common/tables/ICustomizationItem";
 import { CustomItemMap } from "../../resources/CustomItemMap";
 import { Ixyz } from "@spt/models/eft/common/Ixyz";
 import { ISuit } from "@spt/models/eft/common/tables/ITrader";
@@ -13,7 +13,7 @@ const emptyXYZ: Ixyz = {
     z: 0
 }
 
-const borealParkaSuitProps : Props = {
+const borealParkaSuitProps : IProps = {
     Name: "Frostbite's Parka",
     ShortName: "Frostbite's Parka",
     Description: "Frostbite's Parka",
@@ -25,19 +25,20 @@ const borealParkaSuitProps : Props = {
     Prefab: undefined,
     WatchPrefab: undefined,
     IntegratedArmorVest: false,
-    WatchPosition: undefined,
-    WatchRotation: undefined,
-    AvailableAsDefault: true
+    WatchPosition: emptyXYZ,
+    WatchRotation: emptyXYZ,
+    AvailableAsDefault: true,
+    Game: []
 }
 
-const borealParkaTopProps: Props = {
+const borealParkaTopProps: IProps = {
     Name: "Frostbite_Parka_Top",
     ShortName: "Frostbite_Parka_Top",
     Description: "Frostbite_Parka_Top",
-    Side: ["Usec", "Bear"],
+    Side: ["Usec", "Bear", "Savage"],
     BodyPart: "Body",
     Body: "",
-    Hands: "",
+    Hands: CustomItemMap.BOREAL_PARKA_HANDS,
     Feet: "",
     Prefab: {
         path: "clothing/parka/boreal_parka.bundle",
@@ -49,10 +50,11 @@ const borealParkaTopProps: Props = {
     },
     IntegratedArmorVest: false,
     WatchPosition: emptyXYZ,
-    WatchRotation: emptyXYZ
+    WatchRotation: emptyXYZ,
+    Game: []
 }
 
-const borealParkaHandsProps: Props = {
+const borealParkaHandsProps: IProps = {
     Name: "Frostbite_Parka_Hands",
     ShortName: "Frostbite_Parka_Hands",
     Description: "Frostbite_Parka_Hands",
@@ -71,7 +73,8 @@ const borealParkaHandsProps: Props = {
     },
     IntegratedArmorVest: false,
     WatchPosition: emptyXYZ,
-    WatchRotation: emptyXYZ
+    WatchRotation: emptyXYZ,
+    Game: []
 }
 
 export const borealParkaSuitCustomizationItem : ICustomizationItem = {
@@ -118,6 +121,11 @@ export const borealParkaRagmanSuit: ISuit = {
                 _tpl: CurrencyMap.ROUBLES,
                 onlyFunctional: true
             }
-        ]
-    }
+        ],
+        achievementRequirements: [],
+        requiredTid: TraderMap.RAGMAN
+    },
+    externalObtain: false,
+    internalObtain: false,
+    isHiddenInPVE: false
 }

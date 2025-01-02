@@ -1,10 +1,10 @@
-import { Props } from "@spt/models/eft/common/tables/ITemplateItem";
+import { IProps } from "@spt/models/eft/common/tables/ITemplateItem";
 import { NewItemFromCloneDetails } from "@spt/models/spt/mod/NewItemDetails";
 import { ItemMap } from "../../../resources/ItemMap";
 import { BaseClasses } from "@spt/models/enums/BaseClasses";
 
 // Side Armor
-const trooperFastSideArmorPropsToOverride: Props ={
+const trooperFastSideArmorPropsToOverride: IProps ={
     Prefab: {
         path: "helmets/attachments/troopersidearmor.bundle",
         rcid: ""
@@ -40,7 +40,7 @@ export const borealFastSideArmor: NewItemFromCloneDetails = {
 }
 
 // Mandible
-const trooperFastMandiblePropsToOverride: Props ={
+const trooperFastMandiblePropsToOverride: IProps ={
     Prefab: {
         path: "helmets/attachments/trooperfastmandible.bundle",
         rcid: ""

@@ -56,6 +56,7 @@ export class References {
     public botController: BotController
     public httpResponse: HttpResponseUtil
     public itemUtilities: ItemUtilities
+    public customItemService: CustomItemService
     
 
     public preSptLoad(container: DependencyContainer): void {
@@ -104,7 +105,8 @@ export class References {
         this.probHelper = container.resolve<ProbabilityHelper>("ProbabilityHelper")
         this.botController = container.resolve<BotController>("BotController")
         this.httpResponse = container.resolve<HttpResponseUtil>("HttpResponseUtil")
-        this.itemUtilities = new ItemUtilities(container);
+        this.itemUtilities = new ItemUtilities(container, this);
+        this.customItemService = container.resolve<CustomItemService>("CustomItemService");
     }
 
     public customDebugLogger(textString: string): void {
