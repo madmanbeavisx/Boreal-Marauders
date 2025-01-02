@@ -14,7 +14,7 @@ import { Traders } from "@spt/models/enums/Traders";
 
 class Mod implements IPreSptLoadMod, IPostDBLoadMod {
     public modName: string = "Boreal Marauders";
-    public version: string = "1.0.0";
+    public version: string = "1.1.0";
     public oldVersionDirectory: string = "madmanbeavis-wintersdeathgear"
     private debug: boolean = false;
 
